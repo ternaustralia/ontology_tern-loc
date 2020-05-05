@@ -1,5 +1,6 @@
 @startuml
 title TERN Location Alignment Ontology
+"sf:Point" <|-- "tern-loc:Point"
 "geo:Point" <|-- "tern-loc:Point"
 Class "tern-loc:Point" [[https://w3id.org/tern/ontologies/loc/Point]] {
 }

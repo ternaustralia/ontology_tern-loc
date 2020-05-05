@@ -13,14 +13,14 @@
 tern-loc:Location a rdfs:Class ;
     rdfs:label "Location" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom geosparql:Geometry ;
-            owl:onProperty geosparql:hasGeometry ],
-        [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geosparql:hasGeometry ],
         [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:isLocationOf ],
+        [ a owl:Restriction ;
+            owl:onProperty geosparql:hasGeometry ;
+            owl:someValuesFrom geosparql:Geometry ],
         dct:Location .
 
 tern-loc: a owl:Ontology ;
@@ -38,6 +38,7 @@ tern-loc: a owl:Ontology ;
     rdfs:comment "An alignment of a few widely used ontologies for describing locations, features and geometries." ;
     rdfs:seeAlso <https://github.com/ternaustralia/ontology_tern-loc> ;
     owl:imports dct:,
+        <http://topbraid.org/schema/>,
         <http://www.opengis.net/ont/geosparql>,
         <http://www.opengis.net/ont/sf#>,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
@@ -49,23 +50,36 @@ tern-loc:Point a owl:Class ;
     rdfs:label "Point" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#long> ],
+            owl:onProperty tern-loc:longitude ],
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ],
-        <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
-
-geosparql:Geometry rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty tern-loc:altitude ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:elevation ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:asWKT ],
+        [ a owl:Restriction ;
             owl:allValuesFrom geosparql:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:asWKT ] .
-
-<http://www.w3.org/2003/01/geo/wgs84_pos#Point> owl:equivalentClass <http://www.opengis.net/ont/sf#Point> .
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty tern-loc:altitude ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty tern-loc:elevation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty tern-loc:latitude ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:decimal ;
+            owl:onProperty tern-loc:longitude ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:latitude ],
+        <http://www.opengis.net/ont/sf#Point>,
+        <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
 
 tern-loc:location a owl:ObjectProperty ;
     rdfs:label "location" ;
@@ -74,11 +88,27 @@ tern-loc:location a owl:ObjectProperty ;
     rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
     owl:inverseOf tern-loc:isLocationOf .
 
+tern-loc:altitude a owl:DatatypeProperty ;
+    rdfs:label "altitude" ;
+    rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#alt> .
+
+tern-loc:elevation a owl:DatatypeProperty ;
+    rdfs:label "elevation" ;
+    rdfs:subPropertyOf schema:elevation .
+
 tern-loc:isLocationOf a owl:ObjectProperty ;
     rdfs:label "is location of" ;
     rdfs:comment "Relate a Location to a thing." ;
     rdfs:domain tern-loc:Location ;
     owl:inverseOf tern-loc:location .
+
+tern-loc:latitude a owl:DatatypeProperty ;
+    rdfs:label "latitude" ;
+    rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+
+tern-loc:longitude a owl:DatatypeProperty ;
+    rdfs:label "longitude" ;
+    rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
 
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> schema:alternateName "TERN" ;
     schema:name "Terrestrial Ecosystem Research Network" ;
