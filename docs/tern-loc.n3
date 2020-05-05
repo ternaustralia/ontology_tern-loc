@@ -1,5 +1,6 @@
 @prefix : <https://w3id.org/tern/ontologies/loc/> .
 @prefix dct: <http://purl.org/dc/terms/> .
+@prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -79,7 +80,8 @@ tern-loc:Point a owl:Class ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:latitude ],
         <http://www.opengis.net/ont/sf#Point>,
-        <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+        geo:Point,
+        <http://www.w3.org/ns/locn#Geometry> .
 
 tern-loc:location a owl:ObjectProperty ;
     rdfs:label "location" ;
@@ -90,7 +92,7 @@ tern-loc:location a owl:ObjectProperty ;
 
 tern-loc:altitude a owl:DatatypeProperty ;
     rdfs:label "altitude" ;
-    rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#alt> .
+    rdfs:subPropertyOf geo:alt .
 
 tern-loc:elevation a owl:DatatypeProperty ;
     rdfs:label "elevation" ;
@@ -104,11 +106,11 @@ tern-loc:isLocationOf a owl:ObjectProperty ;
 
 tern-loc:latitude a owl:DatatypeProperty ;
     rdfs:label "latitude" ;
-    rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+    rdfs:subPropertyOf geo:lat .
 
 tern-loc:longitude a owl:DatatypeProperty ;
     rdfs:label "longitude" ;
-    rdfs:subPropertyOf <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+    rdfs:subPropertyOf geo:long .
 
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> schema:alternateName "TERN" ;
     schema:name "Terrestrial Ecosystem Research Network" ;
