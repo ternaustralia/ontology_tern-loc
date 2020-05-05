@@ -122,6 +122,22 @@ tern-loc:Point
       owl:onProperty geosparql:asWKT ;
     ] ;
 .
+tern-loc:Polygon
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Polygon" ;
+  rdfs:subClassOf <http://www.opengis.net/ont/sf#Polygon> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom geosparql:wktLiteral ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+.
 tern-loc:altitude
   a owl:DatatypeProperty ;
   rdfs:label "altitude" ;

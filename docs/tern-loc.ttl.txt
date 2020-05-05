@@ -1,9 +1,12 @@
 @startuml
 title TERN Location Alignment Ontology
-"locn:Geometry" <|-- "tern-loc:Point"
 "geo:Point" <|-- "tern-loc:Point"
 "sf:Point" <|-- "tern-loc:Point"
+"locn:Geometry" <|-- "tern-loc:Point"
+"sf:Polygon" <|-- "tern-loc:Polygon"
 Class "tern-loc:Point" [[https://w3id.org/tern/ontologies/loc/Point]] {
+}
+Class "tern-loc:Polygon" [[https://w3id.org/tern/ontologies/loc/Polygon]] {
 }
 header
 Creator: Edmond Chuc (e.chuc@uq.edu.au) 

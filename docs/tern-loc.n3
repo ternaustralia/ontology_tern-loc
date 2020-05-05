@@ -24,6 +24,17 @@ tern-loc:Location a rdfs:Class ;
             owl:someValuesFrom geosparql:Geometry ],
         dct:Location .
 
+tern-loc:Polygon a rdfs:Class,
+        owl:Class ;
+    rdfs:label "Polygon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geosparql:wktLiteral ;
+            owl:onProperty geosparql:asWKT ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:asWKT ],
+        <http://www.opengis.net/ont/sf#Polygon> .
+
 tern-loc: a owl:Ontology ;
     rdfs:label "TERN Location Alignment Ontology" ;
     dct:created "2020-05-01"^^xsd:date ;
