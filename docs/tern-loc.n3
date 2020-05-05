@@ -1,0 +1,86 @@
+@prefix : <https://w3id.org/tern/ontologies/loc/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+tern-loc:Location a rdfs:Class ;
+    rdfs:label "Location" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geosparql:Geometry ;
+            owl:onProperty geosparql:hasGeometry ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:hasGeometry ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:isLocationOf ],
+        dct:Location .
+
+tern-loc: a owl:Ontology ;
+    rdfs:label "TERN Location Alignment Ontology" ;
+    dct:created "2020-05-01"^^xsd:date ;
+    dct:creator [ a schema:Person ;
+            schema:affiliation <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+            schema:email "e.chuc@uq.edu.au" ;
+            schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
+            schema:name "Edmond Chuc" ] ;
+    dct:modified "2020-05-05"^^xsd:date ;
+    dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
+    vann:preferredNamespacePrefix "tern-loc" ;
+    vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
+    rdfs:comment "An alignment of a few widely used ontologies for describing locations, features and geometries." ;
+    rdfs:seeAlso <https://github.com/ternaustralia/ontology_tern-loc> ;
+    owl:imports dct:,
+        <http://www.opengis.net/ont/geosparql>,
+        <http://www.opengis.net/ont/sf#>,
+        <http://www.w3.org/2003/01/geo/wgs84_pos>,
+        <http://www.w3.org/ns/locn#> ;
+    owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.1> ;
+    owl:versionInfo "0.0.1" .
+
+tern-loc:Point a owl:Class ;
+    rdfs:label "Point" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#lat> ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#long> ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty <http://www.w3.org/2003/01/geo/wgs84_pos#alt> ],
+        <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+
+geosparql:Geometry rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geosparql:wktLiteral ;
+            owl:onProperty geosparql:asWKT ],
+        [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:asWKT ] .
+
+<http://www.w3.org/2003/01/geo/wgs84_pos#Point> owl:equivalentClass <http://www.opengis.net/ont/sf#Point> .
+
+tern-loc:location a owl:ObjectProperty ;
+    rdfs:label "location" ;
+    rdfs:comment "Relate a thing to a Location." ;
+    rdfs:range tern-loc:Location ;
+    rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
+    owl:inverseOf tern-loc:isLocationOf .
+
+tern-loc:isLocationOf a owl:ObjectProperty ;
+    rdfs:label "is location of" ;
+    rdfs:comment "Relate a Location to a thing." ;
+    rdfs:domain tern-loc:Location ;
+    owl:inverseOf tern-loc:location .
+
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> schema:alternateName "TERN" ;
+    schema:name "Terrestrial Ecosystem Research Network" ;
+    schema:url <https://www.tern.org.au/> .
+

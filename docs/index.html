@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title>
+   TERN Location Alignment Ontology
+  </title>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+ </head>
+ <body>
+  <div id="pylode">
+   made by
+   <a href="http://github.com/rdflib/pyLODE">
+    pyLODE
+   </a>
+  </div>  <a href="https://www.tern.org.au">
+   <img alt="TERN logo." src="https://swift.rc.nectar.org.au/v1/AUTH_05bca33fce34447ba7033b9305947f11/static-web-assets/tern/2020-04-09/images/logo-mini-all.png"/>
+  </a>
+  <h1>
+   TERN Location Alignment Ontology
+  </h1>
+  <section id="metadata">
+   <h2 style="display:none;">
+    Metadata
+   </h2>
+   <dl>
+    <dt>
+     IRI
+    </dt>
+    <dd>
+     <code>
+      https://w3id.org/tern/ontologies/loc/
+     </code>
+    </dd>
+    <dt>
+     Publisher(s)
+    </dt>
+    <dd>
+     Terrestrial Ecosystem Research Network
+     <br/>
+    </dd>
+    <dt>
+     Creator(s)
+    </dt>
+    <dd>
+     <a href="https://orcid.org/0000-0002-6047-9864">
+      Edmond Chuc
+     </a>
+     (
+     <a href="mailto:e.chuc@uq.edu.au">
+      e.chuc@uq.edu.au
+     </a>
+     ) of
+     <a href="https://www.tern.org.au/">
+      Terrestrial Ecosystem Research Network
+     </a>
+     <br/>
+    </dd>
+    <dt>
+     Created
+    </dt>
+    <dd>
+     2020-05-01
+    </dd>
+    <dt>
+     Modified
+    </dt>
+    <dd>
+     2020-05-05
+    </dd>
+    <dt>
+     Version Information
+    </dt>
+    <dd>
+     0.0.1
+    </dd>
+    <dt>
+     Version IRI
+    </dt>
+    <dd>
+     <a href="https://w3id.org/tern/ontologies/loc/0.0.1">
+      https://w3id.org/tern/ontologies/loc/0.0.1
+     </a>
+    </dd>
+    <dt>
+     Imports
+    </dt>
+    <dd>
+     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
+      http://www.w3.org/2003/01/geo/wgs84_pos
+     </a>
+     <br/>
+     <a href="http://www.opengis.net/ont/geosparql">
+      http://www.opengis.net/ont/geosparql
+     </a>
+     <br/>
+     <a href="http://www.w3.org/ns/locn#">
+      http://www.w3.org/ns/locn#
+     </a>
+     <br/>
+     <a href="http://purl.org/dc/terms/">
+      dct:
+     </a>
+     <br/>
+     <a href="http://www.opengis.net/ont/sf#">
+      http://www.opengis.net/ont/sf#
+     </a>
+     <br/>
+    </dd>
+    <dt>
+     Ontology Source
+    </dt>
+    <dd>
+     <a href="tern-loc.ttl">
+      RDF (turtle)
+     </a>
+    </dd>
+   </dl>
+   <h2>
+    Description
+   </h2>
+   <div id="description">
+    <p>
+     An alignment of a few widely used ontologies for describing locations, features and geometries.
+    </p>
+   </div>
+  </section>
+  <section id="toc">
+   <h2>
+    Table of Contents
+   </h2>
+   <ol>
+    <li>
+     <a href="#overview">
+      Overview
+     </a>
+    </li>
+    <li>
+     <a href="#classes">
+      Classes
+     </a>
+    </li>
+    <li>
+     <a href="#objectproperties">
+      Object Properties
+     </a>
+    </li>
+    <li>
+     <a href="#namespaces">
+      Namespaces
+     </a>
+    </li>
+   </ol>
+  </section>
+  <section id="overview">
+   <h2>
+    Overview
+   </h2>
+   <p style="padding-bottom: 1rem;">
+    An overview of the TERN Location Alignment Ontology.
+   </p>
+   <figure>
+    <img alt="TERN Location Alignment Ontology diagram." src="tern-loc.png"/>
+    <figcaption style="padding-bottom: 3rem">
+     <strong>
+      Figure 1:
+     </strong>
+     TERN Location Alignment Ontology diagram.
+    </figcaption>
+   </figure>
+  </section>
+  <section id="classes">
+   <h2>
+    Classes
+    <span style="float:right; font-size:smaller;">
+     <a href="">
+      &uparrow
+     </a>
+    </span>
+   </h2>
+   <ul class="hlist">
+    <li>
+     <a href="#Location">
+      Location
+     </a>
+    </li>
+    <li>
+     <a href="#Point">
+      Point
+     </a>
+    </li>
+   </ul>
+   <div class="entity class" id="Location">
+    <h3>
+     Location
+     <sup class="sup-c" title="class">
+      c
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       IRI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/Location
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Super-classes
+      </th>
+      <td>
+       <a href="http://purl.org/dc/terms/Location">
+        dct:Location
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Restrictions
+      </th>
+      <td>
+       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
+        geosparql:hasGeometry
+       </a>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br/>
+       <a href="#islocationof">
+        tern-loc:isLocationOf
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br/>
+       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
+        geosparql:hasGeometry
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.opengis.net/ont/geosparql#Geometry">
+        geosparql:Geometry
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       In domain of
+      </th>
+      <td>
+       <a href="#islocationof">
+        tern-loc:isLocationOf
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       In range of
+      </th>
+      <td>
+       <a href="#location">
+        tern-loc:location
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <br/>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div class="entity class" id="Point">
+    <h3>
+     Point
+     <sup class="sup-c" title="class">
+      c
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       IRI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/Point
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Super-classes
+      </th>
+      <td>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
+        http://www.w3.org/2003/01/geo/wgs84_pos#Point
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Restrictions
+      </th>
+      <td>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        http://www.w3.org/2003/01/geo/wgs84_pos#long
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br/>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        http://www.w3.org/2003/01/geo/wgs84_pos#lat
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br/>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        http://www.w3.org/2003/01/geo/wgs84_pos#alt
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br/>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </section>
+  <section id="objectproperties">
+   <h2>
+    Object Properties
+    <span style="float:right; font-size:smaller;">
+     <a href="">
+      &uparrow
+     </a>
+    </span>
+   </h2>
+   <ul class="hlist">
+    <li>
+     <a href="#islocationof">
+      is location of
+     </a>
+    </li>
+    <li>
+     <a href="#location">
+      location
+     </a>
+    </li>
+   </ul>
+   <div class="entity property" id="islocationof">
+    <h3>
+     is location of
+     <sup class="sup-op" title="object property">
+      op
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       IRI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/isLocationOf
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Description
+      </th>
+      <td>
+       Relate a Location to a thing.
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Domain(s)
+      </th>
+      <td>
+       <a href="#Location">
+        tern-loc:Location
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div class="entity property" id="location">
+    <h3>
+     location
+     <sup class="sup-op" title="object property">
+      op
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       IRI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/location
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Description
+      </th>
+      <td>
+       Relate a thing to a Location.
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Super-properties
+      </th>
+      <td>
+       <a href="http://www.w3.org/ns/locn#location">
+        http://www.w3.org/ns/locn#location
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Range(s)
+      </th>
+      <td>
+       <a href="#Location">
+        tern-loc:Location
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </section>
+  <section id="namespaces">
+   <h2>
+    Namespaces
+    <span style="float:right; font-size:smaller;">
+     <a href="">
+      &uparrow
+     </a>
+    </span>
+   </h2>
+   <dl>
+    <dt>
+     <em>
+      default (:)
+     </em>
+    </dt>
+    <dd>
+     <code>
+      https://w3id.org/tern/ontologies/loc/
+     </code>
+    </dd>
+    <dt>
+     dct
+    </dt>
+    <dd>
+     <code>
+      http://purl.org/dc/terms/
+     </code>
+    </dd>
+    <dt>
+     geosparql
+    </dt>
+    <dd>
+     <code>
+      http://www.opengis.net/ont/geosparql#
+     </code>
+    </dd>
+    <dt>
+     owl
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/2002/07/owl#
+     </code>
+    </dd>
+    <dt>
+     rdf
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/1999/02/22-rdf-syntax-ns#
+     </code>
+    </dd>
+    <dt>
+     rdfs
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/2000/01/rdf-schema#
+     </code>
+    </dd>
+    <dt>
+     schema
+    </dt>
+    <dd>
+     <code>
+      http://schema.org/
+     </code>
+    </dd>
+    <dt>
+     tern-loc
+    </dt>
+    <dd>
+     <code>
+      https://w3id.org/tern/ontologies/loc/
+     </code>
+    </dd>
+    <dt>
+     vann
+    </dt>
+    <dd>
+     <code>
+      http://purl.org/vocab/vann/
+     </code>
+    </dd>
+    <dt>
+     xml
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/XML/1998/namespace
+     </code>
+    </dd>
+    <dt>
+     xsd
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/2001/XMLSchema#
+     </code>
+    </dd>
+   </dl>
+  </section>
+  <section id="legend">
+   <h2>
+    Legend
+   </h2>
+   <table class="entity">
+    <tr>
+     <td>
+      <sup class="sup-c" title="Classes">
+       c
+      </sup>
+     </td>
+     <td>
+      Classes
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <sup class="sup-op" title="Object Properties">
+       op
+      </sup>
+     </td>
+     <td>
+      Object Properties
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <sup class="sup-fp" title="Functional Properties">
+       fp
+      </sup>
+     </td>
+     <td>
+      Functional Properties
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <sup class="sup-dp" title="Data Properties">
+       dp
+      </sup>
+     </td>
+     <td>
+      Data Properties
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <sup class="sup-ap" title="Annotation Properties">
+       dp
+      </sup>
+     </td>
+     <td>
+      Annotation Properties
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <sup class="sup-p" title="Properties">
+       p
+      </sup>
+     </td>
+     <td>
+      Properties
+     </td>
+    </tr>
+    <tr>
+     <td>
+      <sup class="sup-ni" title="Named Individuals">
+       ni
+      </sup>
+     </td>
+     <td>
+      Named Individuals
+     </td>
+    </tr>
+   </table>
+  </section>
+ </body>
+</html>
