@@ -66,28 +66,32 @@
      Modified
     </dt>
     <dd>
-     2020-05-05
+     2020-05-07
     </dd>
     <dt>
      Version Information
     </dt>
     <dd>
-     0.0.1
+     0.0.2
     </dd>
     <dt>
      Version IRI
     </dt>
     <dd>
-     <a href="https://w3id.org/tern/ontologies/loc/0.0.1">
-      https://w3id.org/tern/ontologies/loc/0.0.1
+     <a href="https://w3id.org/tern/ontologies/loc/0.0.2">
+      https://w3id.org/tern/ontologies/loc/0.0.2
      </a>
     </dd>
     <dt>
      Imports
     </dt>
     <dd>
-     <a href="http://www.opengis.net/ont/geosparql">
-      http://www.opengis.net/ont/geosparql
+     <a href="http://purl.org/dc/terms/">
+      dct:
+     </a>
+     <br/>
+     <a href="http://www.opengis.net/ont/sf#">
+      http://www.opengis.net/ont/sf#
      </a>
      <br/>
      <a href="http://www.w3.org/ns/locn#">
@@ -98,16 +102,12 @@
       http://topbraid.org/schema/
      </a>
      <br/>
-     <a href="http://purl.org/dc/terms/">
-      dct:
-     </a>
-     <br/>
      <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
       http://www.w3.org/2003/01/geo/wgs84_pos
      </a>
      <br/>
-     <a href="http://www.opengis.net/ont/sf#">
-      http://www.opengis.net/ont/sf#
+     <a href="http://www.opengis.net/ont/geosparql">
+      http://www.opengis.net/ont/geosparql
      </a>
      <br/>
     </dd>
@@ -189,6 +189,11 @@
    </h2>
    <ul class="hlist">
     <li>
+     <a href="#Linestring">
+      Line string
+     </a>
+    </li>
+    <li>
      <a href="#Location">
       Location
      </a>
@@ -204,6 +209,68 @@
      </a>
     </li>
    </ul>
+   <div class="entity class" id="Linestring">
+    <h3>
+     Line string
+     <sup class="sup-c" title="class">
+      c
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       IRI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/LineString
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Super-classes
+      </th>
+      <td>
+       <a href="http://www.opengis.net/ont/sf#LineString">
+        http://www.opengis.net/ont/sf#LineString
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Restrictions
+      </th>
+      <td>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br/>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
+        tern-loc:wktLiteral
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+      </td>
+     </tr>
+    </table>
+   </div>
    <div class="entity class" id="Location">
     <h3>
      Location
@@ -241,6 +308,17 @@
        Restrictions
       </th>
       <td>
+       <a href="#islocationof">
+        tern-loc:isLocationOf
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br/>
        <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
         geosparql:hasGeometry
        </a>
@@ -253,17 +331,6 @@
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
-       <a href="#islocationof">
-        tern-loc:isLocationOf
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <span class="cardinality">
-        min
-       </span>
-       1
        <br/>
        <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
         geosparql:hasGeometry
@@ -335,15 +402,15 @@
         c
        </sup>
        <br/>
-       <a href="http://www.opengis.net/ont/sf#Point">
-        http://www.opengis.net/ont/sf#Point
+       <a href="http://www.w3.org/ns/locn#Geometry">
+        http://www.w3.org/ns/locn#Geometry
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="http://www.w3.org/ns/locn#Geometry">
-        http://www.w3.org/ns/locn#Geometry
+       <a href="http://www.opengis.net/ont/sf#Point">
+        http://www.opengis.net/ont/sf#Point
        </a>
        <sup class="sup-c" title="class">
         c
@@ -356,27 +423,34 @@
        Restrictions
       </th>
       <td>
-       <a href="#elevation">
-        tern-loc:elevation
+       <a href="#longitude">
+        tern-loc:longitude
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
        </sup>
        <span class="cardinality">
-        max
+        only
        </span>
-       1
+       <a href="http://www.w3.org/2001/XMLSchema#decimal">
+        xsd:decimal
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br/>
-       <a href="#altitude">
-        tern-loc:altitude
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
        </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
        <span class="cardinality">
-        max
+        only
        </span>
-       1
+       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
+        tern-loc:wktLiteral
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br/>
        <a href="#elevation">
         tern-loc:elevation
@@ -402,8 +476,19 @@
        </span>
        1
        <br/>
-       <a href="#longitude">
-        tern-loc:longitude
+       <a href="#altitude">
+        tern-loc:altitude
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br/>
+       <a href="#latitude">
+        tern-loc:latitude
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
@@ -415,6 +500,22 @@
        <br/>
        <a href="#latitude">
         tern-loc:latitude
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#decimal">
+        xsd:decimal
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#longitude">
+        tern-loc:longitude
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
@@ -440,50 +541,16 @@
         c
        </sup>
        <br/>
-       <a href="#longitude">
-        tern-loc:longitude
+       <a href="#elevation">
+        tern-loc:elevation
        </a>
        <sup class="sup-dp" title="datatype property">
         dp
        </sup>
        <span class="cardinality">
-        only
+        max
        </span>
-       <a href="http://www.w3.org/2001/XMLSchema#decimal">
-        xsd:decimal
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#decimal">
-        xsd:decimal
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.opengis.net/ont/geosparql#wktLiteral">
-        geosparql:wktLiteral
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
+       1
        <br/>
       </td>
      </tr>
@@ -540,8 +607,8 @@
        <span class="cardinality">
         only
        </span>
-       <a href="http://www.opengis.net/ont/geosparql#wktLiteral">
-        geosparql:wktLiteral
+       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
+        tern-loc:wktLiteral
        </a>
        <sup class="sup-c" title="class">
         c
@@ -892,6 +959,14 @@
     <dd>
      <code>
       http://schema.org/
+     </code>
+    </dd>
+    <dt>
+     skos
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/2004/02/skos/core#
      </code>
     </dd>
     <dt>

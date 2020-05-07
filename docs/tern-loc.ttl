@@ -15,6 +15,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -29,7 +30,7 @@ tern-loc:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  dct:modified "2020-05-05"^^xsd:date ;
+  dct:modified "2020-05-07"^^xsd:date ;
   dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   vann:preferredNamespacePrefix "tern-loc" ;
   vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -42,8 +43,24 @@ tern-loc:
   owl:imports <http://www.opengis.net/ont/sf#> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports <http://www.w3.org/ns/locn#> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.1> ;
-  owl:versionInfo "0.0.1" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.2> ;
+  owl:versionInfo "0.0.2" ;
+.
+tern-loc:LineString
+  a rdfs:Class ;
+  a owl:Class ;
+  rdfs:label "Line string" ;
+  rdfs:subClassOf <http://www.opengis.net/ont/sf#LineString> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-loc:wktLiteral ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
 .
 tern-loc:Location
   a rdfs:Class ;
@@ -73,11 +90,6 @@ tern-loc:Point
   rdfs:subClassOf <http://www.w3.org/ns/locn#Geometry> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom geosparql:wktLiteral ;
-      owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom xsd:decimal ;
       owl:onProperty tern-loc:altitude ;
     ] ;
@@ -95,6 +107,11 @@ tern-loc:Point
       a owl:Restriction ;
       owl:allValuesFrom xsd:decimal ;
       owl:onProperty tern-loc:longitude ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom tern-loc:wktLiteral ;
+      owl:onProperty geosparql:asWKT ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -129,7 +146,7 @@ tern-loc:Polygon
   rdfs:subClassOf <http://www.opengis.net/ont/sf#Polygon> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom geosparql:wktLiteral ;
+      owl:allValuesFrom tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
     ] ;
   rdfs:subClassOf [
@@ -172,6 +189,13 @@ tern-loc:longitude
   a owl:DatatypeProperty ;
   rdfs:label "longitude" ;
   rdfs:subPropertyOf geo:long ;
+.
+tern-loc:wktLiteral
+  a rdfs:Datatype ;
+  rdfs:comment "A Well-known Text serialization of a geometry object." ;
+  rdfs:label "wkt literal" ;
+  rdfs:subClassOf geosparql:wktLiteral ;
+  skos:editorialNote "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation)." ;
 .
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
   schema:alternateName "TERN" ;
