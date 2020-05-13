@@ -34,7 +34,8 @@ tern-loc:Location a rdfs:Class ;
         [ a owl:Restriction ;
             owl:onProperty geosparql:hasGeometry ;
             owl:someValuesFrom geosparql:Geometry ],
-        dct:Location .
+        dct:Location,
+        geosparql:Feature .
 
 tern-loc:Polygon a rdfs:Class,
         owl:Class ;
@@ -55,7 +56,7 @@ tern-loc: a owl:Ontology ;
             schema:email "e.chuc@uq.edu.au" ;
             schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
             schema:name "Edmond Chuc" ] ;
-    dct:modified "2020-05-07"^^xsd:date ;
+    dct:modified "2020-05-13"^^xsd:date ;
     dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
     vann:preferredNamespacePrefix "tern-loc" ;
     vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -67,8 +68,8 @@ tern-loc: a owl:Ontology ;
         <http://www.opengis.net/ont/sf#>,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
         <http://www.w3.org/ns/locn#> ;
-    owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.2> ;
-    owl:versionInfo "0.0.2" .
+    owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.3> ;
+    owl:versionInfo "0.0.3" .
 
 tern-loc:Point a owl:Class ;
     rdfs:label "Point" ;
