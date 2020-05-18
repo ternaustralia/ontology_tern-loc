@@ -19,7 +19,7 @@ tern-loc:LineString a rdfs:Class,
             owl:allValuesFrom tern-loc:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geosparql:asWKT ],
         <http://www.opengis.net/ont/sf#LineString> .
 
@@ -44,7 +44,7 @@ tern-loc:Polygon a rdfs:Class,
             owl:allValuesFrom tern-loc:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geosparql:asWKT ],
         <http://www.opengis.net/ont/sf#Polygon> .
 
@@ -84,6 +84,9 @@ tern-loc:Point a owl:Class ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:asWKT ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:latitude ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -94,9 +97,6 @@ tern-loc:Point a owl:Class ;
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:elevation ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
             owl:allValuesFrom xsd:decimal ;
             owl:onProperty tern-loc:altitude ],

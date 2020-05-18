@@ -58,7 +58,7 @@ tern-loc:LineString
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
     ] ;
 .
@@ -117,6 +117,11 @@ tern-loc:Point
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern-loc:latitude ;
     ] ;
   rdfs:subClassOf [
@@ -134,11 +139,6 @@ tern-loc:Point
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern-loc:elevation ;
     ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty geosparql:asWKT ;
-    ] ;
 .
 tern-loc:Polygon
   a rdfs:Class ;
@@ -152,7 +152,7 @@ tern-loc:Polygon
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
     ] ;
 .
