@@ -5,6 +5,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [0.0.4] - 2020-05-19
+### Changed
+- ternloc:Point restriction type for tern-loc:altitude, tern-loc:elevation, tern-loc:latitude and tern-loc:longitude from xsd:decimal to xsd:double
+
+
 ## [0.0.3] - 2020-05-13
 ### Added
 - tern-loc:Location rdfs:subClassOf geosparql:Feature
