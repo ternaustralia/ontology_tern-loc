@@ -5,6 +5,7 @@
 # imports: http://www.opengis.net/ont/sf#
 # imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # imports: http://www.w3.org/ns/locn#
+# imports: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
 # prefix: tern-loc
 
 @prefix : <https://w3id.org/tern/ontologies/loc/> .
@@ -43,6 +44,7 @@ tern-loc:
   owl:imports <http://www.opengis.net/ont/sf#> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports <http://www.w3.org/ns/locn#> ;
+  owl:imports <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
   owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.4> ;
   owl:versionInfo "0.0.4" ;
 .
@@ -91,22 +93,22 @@ tern-loc:Point
   rdfs:subClassOf <http://www.w3.org/ns/locn#Geometry> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
+      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:altitude ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
+      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:elevation ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
+      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:latitude ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom xsd:double ;
+      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:longitude ;
     ] ;
   rdfs:subClassOf [
@@ -157,12 +159,12 @@ tern-loc:Polygon
     ] ;
 .
 tern-loc:altitude
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:label "altitude" ;
   rdfs:subPropertyOf geo:alt ;
 .
 tern-loc:elevation
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:label "elevation" ;
   rdfs:subPropertyOf schema:elevation ;
 .
@@ -174,7 +176,7 @@ tern-loc:isLocationOf
   owl:inverseOf tern-loc:location ;
 .
 tern-loc:latitude
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:label "latitude" ;
   rdfs:subPropertyOf geo:lat ;
 .
@@ -187,7 +189,7 @@ tern-loc:location
   owl:inverseOf tern-loc:isLocationOf ;
 .
 tern-loc:longitude
-  a owl:DatatypeProperty ;
+  a owl:ObjectProperty ;
   rdfs:label "longitude" ;
   rdfs:subPropertyOf geo:long ;
 .
