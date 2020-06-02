@@ -1,15 +1,15 @@
 @startuml
 title TERN Location Alignment Ontology
 "sf:LineString" <|-- "tern-loc:LineString"
-"geo:Point" <|-- "tern-loc:Point"
-"sf:Point" <|-- "tern-loc:Point"
-"locn:Geometry" <|-- "tern-loc:Point"
 "sf:Polygon" <|-- "tern-loc:Polygon"
+"geo:Point" <|-- "tern-loc:Point"
+"locn:Geometry" <|-- "tern-loc:Point"
+"sf:Point" <|-- "tern-loc:Point"
 Class "tern-loc:LineString" [[https://w3id.org/tern/ontologies/loc/LineString]] {
 }
-Class "tern-loc:Point" [[https://w3id.org/tern/ontologies/loc/Point]] {
-}
 Class "tern-loc:Polygon" [[https://w3id.org/tern/ontologies/loc/Polygon]] {
+}
+Class "tern-loc:Point" [[https://w3id.org/tern/ontologies/loc/Point]] {
 }
 header
 Creator: Edmond Chuc (e.chuc@uq.edu.au) 
