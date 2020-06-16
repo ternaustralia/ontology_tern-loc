@@ -31,7 +31,7 @@ tern-loc:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  dct:modified "2020-06-02"^^xsd:date ;
+  dct:modified "2020-06-16"^^xsd:date ;
   dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   vann:preferredNamespacePrefix "tern-loc" ;
   vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -45,8 +45,8 @@ tern-loc:
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports <http://www.w3.org/ns/locn#> ;
   owl:imports <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.5> ;
-  owl:versionInfo "0.0.5" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.6> ;
+  owl:versionInfo "0.0.6" ;
 .
 tern-loc:LineString
   a rdfs:Class ;
@@ -99,6 +99,11 @@ tern-loc:Point
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onProperty tern-loc:depth ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:elevation ;
     ] ;
   rdfs:subClassOf [
@@ -139,6 +144,11 @@ tern-loc:Point
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:depth ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern-loc:elevation ;
     ] ;
 .
@@ -162,6 +172,10 @@ tern-loc:altitude
   a owl:ObjectProperty ;
   rdfs:label "altitude" ;
   rdfs:subPropertyOf geo:alt ;
+.
+tern-loc:depth
+  a rdf:Property ;
+  rdfs:label "depth" ;
 .
 tern-loc:elevation
   a owl:ObjectProperty ;
