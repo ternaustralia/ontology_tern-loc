@@ -86,36 +86,36 @@
      Imports
     </dt>
     <dd>
-     <a href="http://www.opengis.net/ont/geosparql">
-      http://www.opengis.net/ont/geosparql
-     </a>
-     <br/>
-     <a href="http://www.w3.org/ns/locn#">
-      http://www.w3.org/ns/locn#
-     </a>
-     <br/>
      <a href="http://topbraid.org/schema/">
       http://topbraid.org/schema/
      </a>
      <br/>
-     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
-      http://www.w3.org/2003/01/geo/wgs84_pos
+     <a href="http://www.opengis.net/ont/geosparql">
+      http://www.opengis.net/ont/geosparql
      </a>
      <br/>
-     <a href="http://purl.org/dc/terms/">
-      dct:
-     </a>
-     <br/>
-     <a href="http://www.w3.org/2004/02/skos/core#">
-      skos:
+     <a href="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf">
+      https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
      </a>
      <br/>
      <a href="http://www.opengis.net/ont/sf#">
       http://www.opengis.net/ont/sf#
      </a>
      <br/>
-     <a href="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf">
-      https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
+     <a href="http://purl.org/dc/terms/">
+      dct:
+     </a>
+     <br/>
+     <a href="http://www.w3.org/ns/locn#">
+      http://www.w3.org/ns/locn#
+     </a>
+     <br/>
+     <a href="http://www.w3.org/2004/02/skos/core#">
+      skos:
+     </a>
+     <br/>
+     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
+      http://www.w3.org/2003/01/geo/wgs84_pos
      </a>
      <br/>
     </dd>
@@ -254,21 +254,8 @@
        Restrictions
       </th>
       <td>
-       <a href="#datum">
-        tern-loc:datum
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#datum">
-        tern-loc:datum
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
        </a>
        <span class="cardinality">
         exactly
@@ -287,14 +274,6 @@
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
        <br/>
       </td>
      </tr>
@@ -344,6 +323,17 @@
        Restrictions
       </th>
       <td>
+       <a href="#islocationof">
+        tern-loc:isLocationOf
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br/>
        <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
         geosparql:hasGeometry
        </a>
@@ -356,17 +346,6 @@
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
-       <a href="#islocationof">
-        tern-loc:isLocationOf
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <span class="cardinality">
-        min
-       </span>
-       1
        <br/>
        <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
         geosparql:hasGeometry
@@ -431,15 +410,15 @@
        Super-classes
       </th>
       <td>
-       <a href="http://www.opengis.net/ont/sf#Point">
-        http://www.opengis.net/ont/sf#Point
+       <a href="http://www.w3.org/ns/locn#Geometry">
+        http://www.w3.org/ns/locn#Geometry
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br/>
-       <a href="http://www.w3.org/ns/locn#Geometry">
-        http://www.w3.org/ns/locn#Geometry
+       <a href="http://www.opengis.net/ont/sf#Point">
+        http://www.opengis.net/ont/sf#Point
        </a>
        <sup class="sup-c" title="class">
         c
@@ -459,106 +438,6 @@
        Restrictions
       </th>
       <td>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="#datum">
-        tern-loc:datum
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="#datum">
-        tern-loc:datum
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#altitude">
-        tern-loc:altitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#depth">
-        tern-loc:depth
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
-       <a href="#elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
-       <a href="#altitude">
-        tern-loc:altitude
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
        <a href="http://www.opengis.net/ont/geosparql#asWKT">
         geosparql:asWKT
        </a>
@@ -572,8 +451,8 @@
         c
        </sup>
        <br/>
-       <a href="#longitude">
-        tern-loc:longitude
+       <a href="#latitude">
+        tern-loc:latitude
        </a>
        <span class="cardinality">
         only
@@ -584,6 +463,72 @@
        <sup class="sup-c" title="class">
         c
        </sup>
+       <br/>
+       <a href="#altitude">
+        tern-loc:altitude
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#longitude">
+        tern-loc:longitude
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br/>
+       <a href="#altitude">
+        tern-loc:altitude
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br/>
+       <a href="#elevation">
+        tern-loc:elevation
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#depth">
+        tern-loc:depth
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br/>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br/>
+       <a href="#latitude">
+        tern-loc:latitude
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
        <br/>
        <a href="#depth">
         tern-loc:depth
@@ -602,7 +547,20 @@
         tern-loc:longitude
        </a>
        <span class="cardinality">
-        exactly
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#elevation">
+        tern-loc:elevation
+       </a>
+       <span class="cardinality">
+        max
        </span>
        1
        <br/>
@@ -647,14 +605,6 @@
        Restrictions
       </th>
       <td>
-       <a href="#datum">
-        tern-loc:datum
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
        <a href="http://www.opengis.net/ont/geosparql#asWKT">
         geosparql:asWKT
        </a>
@@ -675,19 +625,6 @@
         exactly
        </span>
        1
-       <br/>
-       <a href="#datum">
-        tern-loc:datum
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
        <br/>
       </td>
      </tr>
@@ -902,11 +839,7 @@
        Description
       </th>
       <td>
-       Value should be from a controlled vocabulary such as TERN's
-       <a href="http://linked.data.gov.au/def/tern-cv/639a419a-3918-43b6-a7af-26799c19a9bd">
-        Geodetic datums
-       </a>
-       .
+       Value should be from a controlled vocabulary with a unique identifier.
       </td>
      </tr>
     </table>

@@ -16,17 +16,11 @@ tern-loc:LineString a rdfs:Class,
         owl:Class ;
     rdfs:label "Line string" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern-loc:datum ],
-        [ a owl:Restriction ;
             owl:allValuesFrom tern-loc:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geosparql:asWKT ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:datum ],
         <http://www.opengis.net/ont/sf#LineString> .
 
 tern-loc:Location a rdfs:Class ;
@@ -47,17 +41,11 @@ tern-loc:Polygon a rdfs:Class,
         owl:Class ;
     rdfs:label "Polygon" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern-loc:datum ],
-        [ a owl:Restriction ;
             owl:allValuesFrom tern-loc:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty geosparql:asWKT ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:datum ],
         <http://www.opengis.net/ont/sf#Polygon> .
 
 tern-loc: a owl:Ontology ;
@@ -89,9 +77,6 @@ tern-loc:Point a owl:Class ;
     rdfs:label "Point" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
-            owl:onProperty tern-loc:altitude ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
             owl:onProperty tern-loc:depth ],
         [ a owl:Restriction ;
             owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
@@ -102,9 +87,6 @@ tern-loc:Point a owl:Class ;
         [ a owl:Restriction ;
             owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
             owl:onProperty tern-loc:longitude ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
-            owl:onProperty tern-loc:datum ],
         [ a owl:Restriction ;
             owl:allValuesFrom tern-loc:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
@@ -113,9 +95,6 @@ tern-loc:Point a owl:Class ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:datum ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:latitude ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;
@@ -129,9 +108,18 @@ tern-loc:Point a owl:Class ;
         [ a owl:Restriction ;
             owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:elevation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+            owl:onProperty tern-loc:altitude ],
         <http://www.opengis.net/ont/sf#Point>,
         geo:Point,
         <http://www.w3.org/ns/locn#Geometry> .
+
+tern-loc:datum a rdf:Property ;
+    rdfs:label "datum" ;
+    rdfs:comment "Value should be from a controlled vocabulary with a unique identifier." ;
+    skos:editorialNote "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." ;
+    skos:example "<http://www.opengis.net/def/datum/EPSG/0/6326>" .
 
 tern-loc:location a owl:ObjectProperty ;
     rdfs:label "location" ;
@@ -174,8 +162,4 @@ tern-loc:wktLiteral a rdfs:Datatype ;
     rdfs:comment "A Well-known Text serialization of a geometry object." ;
     rdfs:subClassOf geosparql:wktLiteral ;
     skos:editorialNote "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation)." .
-
-tern-loc:datum a rdf:Property ;
-    rdfs:label "datum" ;
-    rdfs:comment "Value should be from a controlled vocabulary such as TERN's <a href=\"http://linked.data.gov.au/def/tern-cv/639a419a-3918-43b6-a7af-26799c19a9bd\">Geodetic datums</a>." .
 

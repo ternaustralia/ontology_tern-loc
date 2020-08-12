@@ -57,11 +57,6 @@ tern-loc:LineString
   rdfs:subClassOf <http://www.opengis.net/ont/sf#LineString> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom skos:Concept ;
-      owl:onProperty tern-loc:datum ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
     ] ;
@@ -69,11 +64,6 @@ tern-loc:LineString
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:datum ;
     ] ;
 .
 tern-loc:Location
@@ -130,11 +120,6 @@ tern-loc:Point
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom skos:Concept ;
-      owl:onProperty tern-loc:datum ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
     ] ;
@@ -142,11 +127,6 @@ tern-loc:Point
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:datum ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -181,11 +161,6 @@ tern-loc:Polygon
   rdfs:subClassOf <http://www.opengis.net/ont/sf#Polygon> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom skos:Concept ;
-      owl:onProperty tern-loc:datum ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
       owl:allValuesFrom tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
     ] ;
@@ -193,11 +168,6 @@ tern-loc:Polygon
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:datum ;
     ] ;
 .
 tern-loc:altitude
@@ -207,8 +177,10 @@ tern-loc:altitude
 .
 tern-loc:datum
   a rdf:Property ;
-  rdfs:comment "Value should be from a controlled vocabulary such as TERN's <a href=\"http://linked.data.gov.au/def/tern-cv/639a419a-3918-43b6-a7af-26799c19a9bd\">Geodetic datums</a>." ;
+  rdfs:comment "Value should be from a controlled vocabulary with a unique identifier." ;
   rdfs:label "datum" ;
+  skos:editorialNote "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." ;
+  skos:example "<http://www.opengis.net/def/datum/EPSG/0/6326>" ;
 .
 tern-loc:depth
   a rdf:Property ;
