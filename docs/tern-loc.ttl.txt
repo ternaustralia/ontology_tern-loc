@@ -2,8 +2,8 @@
 title TERN Location Alignment Ontology
 "sf:Polygon" <|-- "tern-loc:Polygon"
 "sf:LineString" <|-- "tern-loc:LineString"
-"locn:Geometry" <|-- "tern-loc:Point"
 "geo:Point" <|-- "tern-loc:Point"
+"locn:Geometry" <|-- "tern-loc:Point"
 "sf:Point" <|-- "tern-loc:Point"
 Class "tern-loc:Polygon" [[https://w3id.org/tern/ontologies/loc/Polygon]] {
 }

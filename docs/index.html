@@ -86,12 +86,8 @@
      Imports
     </dt>
     <dd>
-     <a href="http://www.opengis.net/ont/sf#">
-      http://www.opengis.net/ont/sf#
-     </a>
-     <br/>
-     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
-      http://www.w3.org/2003/01/geo/wgs84_pos
+     <a href="http://www.opengis.net/ont/geosparql">
+      http://www.opengis.net/ont/geosparql
      </a>
      <br/>
      <a href="http://www.w3.org/ns/locn#">
@@ -102,16 +98,20 @@
       http://topbraid.org/schema/
      </a>
      <br/>
-     <a href="http://www.w3.org/2004/02/skos/core#">
-      skos:
-     </a>
-     <br/>
-     <a href="http://www.opengis.net/ont/geosparql">
-      http://www.opengis.net/ont/geosparql
+     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
+      http://www.w3.org/2003/01/geo/wgs84_pos
      </a>
      <br/>
      <a href="http://purl.org/dc/terms/">
       dct:
+     </a>
+     <br/>
+     <a href="http://www.w3.org/2004/02/skos/core#">
+      skos:
+     </a>
+     <br/>
+     <a href="http://www.opengis.net/ont/sf#">
+      http://www.opengis.net/ont/sf#
      </a>
      <br/>
      <a href="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf">
@@ -258,6 +258,19 @@
         tern-loc:datum
        </a>
        <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#datum">
+        tern-loc:datum
+       </a>
+       <span class="cardinality">
         exactly
        </span>
        1
@@ -282,19 +295,6 @@
         exactly
        </span>
        1
-       <br/>
-       <a href="#datum">
-        tern-loc:datum
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
        <br/>
       </td>
      </tr>
@@ -357,20 +357,20 @@
         c
        </sup>
        <br/>
-       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
-        geosparql:hasGeometry
-       </a>
-       <span class="cardinality">
-        min
-       </span>
-       1
-       <br/>
        <a href="#islocationof">
         tern-loc:isLocationOf
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br/>
+       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
+        geosparql:hasGeometry
+       </a>
        <span class="cardinality">
         min
        </span>
@@ -431,6 +431,13 @@
        Super-classes
       </th>
       <td>
+       <a href="http://www.opengis.net/ont/sf#Point">
+        http://www.opengis.net/ont/sf#Point
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
        <a href="http://www.w3.org/ns/locn#Geometry">
         http://www.w3.org/ns/locn#Geometry
        </a>
@@ -445,13 +452,6 @@
         c
        </sup>
        <br/>
-       <a href="http://www.opengis.net/ont/sf#Point">
-        http://www.opengis.net/ont/sf#Point
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
       </td>
      </tr>
      <tr>
@@ -459,24 +459,8 @@
        Restrictions
       </th>
       <td>
-       <a href="#longitude">
-        tern-loc:longitude
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="#elevation">
-        tern-loc:elevation
+       <a href="#latitude">
+        tern-loc:latitude
        </a>
        <span class="cardinality">
         only
@@ -487,6 +471,22 @@
        <sup class="sup-c" title="class">
         c
        </sup>
+       <br/>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br/>
+       <a href="#latitude">
+        tern-loc:latitude
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
        <br/>
        <a href="#datum">
         tern-loc:datum
@@ -495,95 +495,6 @@
         exactly
        </span>
        1
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
-        tern-loc:wktLiteral
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#depth">
-        tern-loc:depth
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
-       <a href="#depth">
-        tern-loc:depth
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#altitude">
-        tern-loc:altitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#longitude">
-        tern-loc:longitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
        <br/>
        <a href="#datum">
         tern-loc:datum
@@ -602,7 +513,96 @@
         tern-loc:altitude
        </a>
        <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#depth">
+        tern-loc:depth
+       </a>
+       <span class="cardinality">
         max
+       </span>
+       1
+       <br/>
+       <a href="#elevation">
+        tern-loc:elevation
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#elevation">
+        tern-loc:elevation
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br/>
+       <a href="#altitude">
+        tern-loc:altitude
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br/>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
+        tern-loc:wktLiteral
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#longitude">
+        tern-loc:longitude
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#depth">
+        tern-loc:depth
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br/>
+       <a href="#longitude">
+        tern-loc:longitude
+       </a>
+       <span class="cardinality">
+        exactly
        </span>
        1
        <br/>
@@ -651,14 +651,9 @@
         tern-loc:datum
        </a>
        <span class="cardinality">
-        only
+        exactly
        </span>
-       <a href="http://www.w3.org/2004/02/skos/core#Concept">
-        skos:Concept
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
+       1
        <br/>
        <a href="http://www.opengis.net/ont/geosparql#asWKT">
         geosparql:asWKT
@@ -685,9 +680,14 @@
         tern-loc:datum
        </a>
        <span class="cardinality">
-        exactly
+        only
        </span>
-       1
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br/>
       </td>
      </tr>
@@ -895,6 +895,18 @@
        <code>
         https://w3id.org/tern/ontologies/loc/datum
        </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Description
+      </th>
+      <td>
+       Value should be from a controlled vocabulary such as TERN's
+       <a href="http://linked.data.gov.au/def/tern-cv/639a419a-3918-43b6-a7af-26799c19a9bd">
+        Geodetic datums
+       </a>
+       .
       </td>
      </tr>
     </table>
