@@ -1,61 +1,96 @@
 [
   {
-    "@id": "https://w3id.org/tern/ontologies/loc/latitude",
+    "@id": "https://w3id.org/tern/ontologies/loc/Polygon",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2000/01/rdf-schema#Class",
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "latitude"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66",
-    "http://schema.org/alternateName": [
-      {
-        "@value": "TERN"
-      }
-    ],
-    "http://schema.org/name": [
-      {
-        "@value": "Terrestrial Ecosystem Research Network"
-      }
-    ],
-    "http://schema.org/url": [
-      {
-        "@id": "https://www.tern.org.au/"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Datatype"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "A Well-known Text serialization of a geometry object."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "wkt literal"
+        "@value": "Polygon"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.opengis.net/ont/geosparql#wktLiteral"
+        "@id": "http://www.opengis.net/ont/sf#Polygon"
+      },
+      {
+        "@id": "_:ub1bL196C19"
+      },
+      {
+        "@id": "_:ub1bL186C19"
+      },
+      {
+        "@id": "_:ub1bL191C19"
+      },
+      {
+        "@id": "_:ub1bL181C19"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL196C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+    "http://www.w3.org/2002/07/owl#onProperty": [
       {
-        "@value": "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation)."
+        "@id": "https://w3id.org/tern/ontologies/loc/datum"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL186C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL191C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL181C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/datum"
       }
     ]
   },
@@ -91,6 +126,397 @@
     ]
   },
   {
+    "@id": "https://w3id.org/tern/ontologies/loc/Location",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "_:ub1bL88C19"
+      },
+      {
+        "@id": "_:ub1bL93C19"
+      },
+      {
+        "@id": "http://purl.org/dc/terms/Location"
+      },
+      {
+        "@id": "_:ub1bL83C19"
+      },
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#Feature"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL88C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/isLocationOf"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL93C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#someValuesFrom": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#Geometry"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL83C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#minCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/Point",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Point"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
+      },
+      {
+        "@id": "_:ub1bL170C19"
+      },
+      {
+        "@id": "_:ub1bL160C19"
+      },
+      {
+        "@id": "http://www.opengis.net/ont/sf#Point"
+      },
+      {
+        "@id": "http://www.w3.org/ns/locn#Geometry"
+      },
+      {
+        "@id": "_:ub1bL155C19"
+      },
+      {
+        "@id": "_:ub1bL140C19"
+      },
+      {
+        "@id": "_:ub1bL115C19"
+      },
+      {
+        "@id": "_:ub1bL125C19"
+      },
+      {
+        "@id": "_:ub1bL105C19"
+      },
+      {
+        "@id": "_:ub1bL120C19"
+      },
+      {
+        "@id": "_:ub1bL145C19"
+      },
+      {
+        "@id": "_:ub1bL110C19"
+      },
+      {
+        "@id": "_:ub1bL130C19"
+      },
+      {
+        "@id": "_:ub1bL150C19"
+      },
+      {
+        "@id": "_:ub1bL165C19"
+      },
+      {
+        "@id": "_:ub1bL135C19"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL170C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/elevation"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL160C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/altitude"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL155C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/longitude"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL140C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL115C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/elevation"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL125C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/longitude"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL105C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/altitude"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL120C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/latitude"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL145C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/datum"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL110C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/depth"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL130C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/datum"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL150C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/latitude"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL165C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#maxCardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/depth"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL135C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66",
+    "http://schema.org/alternateName": [
+      {
+        "@value": "TERN"
+      }
+    ],
+    "http://schema.org/name": [
+      {
+        "@value": "Terrestrial Ecosystem Research Network"
+      }
+    ],
+    "http://schema.org/url": [
+      {
+        "@id": "https://www.tern.org.au/"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/tern/ontologies/loc/depth",
     "@type": [
       "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
@@ -98,6 +524,170 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@value": "depth"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/altitude",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "altitude"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/LineString",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "http://www.w3.org/2000/01/rdf-schema#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "Line string"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.opengis.net/ont/sf#LineString"
+      },
+      {
+        "@id": "_:ub1bL72C19"
+      },
+      {
+        "@id": "_:ub1bL62C19"
+      },
+      {
+        "@id": "_:ub1bL67C19"
+      },
+      {
+        "@id": "_:ub1bL57C19"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL72C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/datum"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL62C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL67C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#cardinality": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
+        "@value": "1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+      }
+    ]
+  },
+  {
+    "@id": "_:ub1bL57C19",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Restriction"
+    ],
+    "http://www.w3.org/2002/07/owl#allValuesFrom": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#onProperty": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/datum"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/isLocationOf",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "Relate a Location to a thing."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/Location"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "is location of"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#inverseOf": [
+      {
+        "@id": "https://w3id.org/tern/ontologies/loc/location"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/elevation",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "elevation"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://schema.org/elevation"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/datum",
+    "@type": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "datum"
       }
     ]
   },
@@ -114,13 +704,13 @@
     ],
     "http://purl.org/dc/terms/creator": [
       {
-        "@id": "_:ub1bL26C15"
+        "@id": "_:ub1bL27C15"
       }
     ],
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2020-06-16"
+        "@value": "2020-08-12"
       }
     ],
     "http://purl.org/dc/terms/publisher": [
@@ -158,37 +748,40 @@
         "@id": "http://topbraid.org/schema/"
       },
       {
-        "@id": "http://www.opengis.net/ont/sf#"
-      },
-      {
-        "@id": "http://www.w3.org/ns/locn#"
-      },
-      {
-        "@id": "http://purl.org/dc/terms/"
+        "@id": "https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf"
       },
       {
         "@id": "http://www.w3.org/2003/01/geo/wgs84_pos"
       },
       {
-        "@id": "http://www.opengis.net/ont/geosparql"
+        "@id": "http://www.w3.org/2004/02/skos/core#"
       },
       {
-        "@id": "https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf"
+        "@id": "http://www.w3.org/ns/locn#"
+      },
+      {
+        "@id": "http://www.opengis.net/ont/sf#"
+      },
+      {
+        "@id": "http://purl.org/dc/terms/"
+      },
+      {
+        "@id": "http://www.opengis.net/ont/geosparql"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionIRI": [
       {
-        "@id": "https://w3id.org/tern/ontologies/loc/0.0.6"
+        "@id": "https://w3id.org/tern/ontologies/loc/0.0.7"
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
       {
-        "@value": "0.0.6"
+        "@value": "0.0.7"
       }
     ]
   },
   {
-    "@id": "_:ub1bL26C15",
+    "@id": "_:ub1bL27C15",
     "@type": [
       "http://schema.org/Person"
     ],
@@ -214,455 +807,51 @@
     ]
   },
   {
-    "@id": "https://w3id.org/tern/ontologies/loc/Point",
+    "@id": "https://w3id.org/tern/ontologies/loc/latitude",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
-        "@value": "Point"
+        "@value": "latitude"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#lat"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral",
+    "@type": [
+      "http://www.w3.org/2000/01/rdf-schema#Datatype"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "A Well-known Text serialization of a geometry object."
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "wkt literal"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "_:ub1bL143C19"
-      },
-      {
-        "@id": "_:ub1bL103C19"
-      },
-      {
-        "@id": "http://www.w3.org/ns/locn#Geometry"
-      },
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#Point"
-      },
-      {
-        "@id": "_:ub1bL98C19"
-      },
-      {
-        "@id": "_:ub1bL133C19"
-      },
-      {
-        "@id": "_:ub1bL128C19"
-      },
-      {
-        "@id": "_:ub1bL108C19"
-      },
-      {
-        "@id": "_:ub1bL93C19"
-      },
-      {
-        "@id": "_:ub1bL148C19"
-      },
-      {
-        "@id": "_:ub1bL138C19"
-      },
-      {
-        "@id": "http://www.opengis.net/ont/sf#Point"
-      },
-      {
-        "@id": "_:ub1bL123C19"
-      },
-      {
-        "@id": "_:ub1bL118C19"
-      },
-      {
-        "@id": "_:ub1bL113C19"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL143C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
+        "@id": "http://www.opengis.net/ont/geosparql#wktLiteral"
       }
     ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
       {
-        "@id": "https://w3id.org/tern/ontologies/loc/depth"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL103C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/elevation"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL98C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/depth"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL133C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/longitude"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL128C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/latitude"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL108C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/latitude"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL93C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/altitude"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL148C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/elevation"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL138C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#maxCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/altitude"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL123C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL118C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL113C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "http://linked.data.gov.au/def/datatype/QuantitativeMeasure"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/longitude"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/Polygon",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class",
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Polygon"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub1bL159C19"
-      },
-      {
-        "@id": "http://www.opengis.net/ont/sf#Polygon"
-      },
-      {
-        "@id": "_:ub1bL164C19"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL159C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL164C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/Location",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Location"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub1bL81C19"
-      },
-      {
-        "@id": "http://purl.org/dc/terms/Location"
-      },
-      {
-        "@id": "_:ub1bL76C19"
-      },
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#Feature"
-      },
-      {
-        "@id": "_:ub1bL71C19"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL81C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#someValuesFrom": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#Geometry"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL76C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#minCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/isLocationOf"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL71C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#minCardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#hasGeometry"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/LineString",
-    "@type": [
-      "http://www.w3.org/2000/01/rdf-schema#Class",
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "Line string"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "_:ub1bL60C19"
-      },
-      {
-        "@id": "_:ub1bL55C19"
-      },
-      {
-        "@id": "http://www.opengis.net/ont/sf#LineString"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL60C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#cardinality": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger",
-        "@value": "1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
-      }
-    ]
-  },
-  {
-    "@id": "_:ub1bL55C19",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Restriction"
-    ],
-    "http://www.w3.org/2002/07/owl#allValuesFrom": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/wktLiteral"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#onProperty": [
-      {
-        "@id": "http://www.opengis.net/ont/geosparql#asWKT"
+        "@value": "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation)."
       }
     ]
   },
   {
     "@id": "https://w3id.org/tern/ontologies/loc/longitude",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
@@ -672,64 +861,6 @@
     "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
       {
         "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#long"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/altitude",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "altitude"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/2003/01/geo/wgs84_pos#alt"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/isLocationOf",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#comment": [
-      {
-        "@value": "Relate a Location to a thing."
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/Location"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "is location of"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#inverseOf": [
-      {
-        "@id": "https://w3id.org/tern/ontologies/loc/location"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/tern/ontologies/loc/elevation",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@value": "elevation"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://schema.org/elevation"
       }
     ]
   }

@@ -4,6 +4,7 @@
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf#
 # imports: http://www.w3.org/2003/01/geo/wgs84_pos
+# imports: http://www.w3.org/2004/02/skos/core#
 # imports: http://www.w3.org/ns/locn#
 # imports: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
 # prefix: tern-loc
@@ -31,7 +32,7 @@ tern-loc:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  dct:modified "2020-06-16"^^xsd:date ;
+  dct:modified "2020-08-12"^^xsd:date ;
   dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   vann:preferredNamespacePrefix "tern-loc" ;
   vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -43,16 +44,22 @@ tern-loc:
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports <http://www.opengis.net/ont/sf#> ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
+  owl:imports skos: ;
   owl:imports <http://www.w3.org/ns/locn#> ;
   owl:imports <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.6> ;
-  owl:versionInfo "0.0.6" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.7> ;
+  owl:versionInfo "0.0.7" ;
 .
 tern-loc:LineString
   a rdfs:Class ;
   a owl:Class ;
   rdfs:label "Line string" ;
   rdfs:subClassOf <http://www.opengis.net/ont/sf#LineString> ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty tern-loc:datum ;
+    ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:allValuesFrom tern-loc:wktLiteral ;
@@ -62,6 +69,11 @@ tern-loc:LineString
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:datum ;
     ] ;
 .
 tern-loc:Location
@@ -118,6 +130,11 @@ tern-loc:Point
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty tern-loc:datum ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:allValuesFrom tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
     ] ;
@@ -125,6 +142,11 @@ tern-loc:Point
       a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:datum ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
@@ -159,6 +181,11 @@ tern-loc:Polygon
   rdfs:subClassOf <http://www.opengis.net/ont/sf#Polygon> ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty tern-loc:datum ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:allValuesFrom tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
     ] ;
@@ -167,18 +194,27 @@ tern-loc:Polygon
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geosparql:asWKT ;
     ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:datum ;
+    ] ;
 .
 tern-loc:altitude
-  a owl:ObjectProperty ;
+  a rdf:Property ;
   rdfs:label "altitude" ;
   rdfs:subPropertyOf geo:alt ;
+.
+tern-loc:datum
+  a rdf:Property ;
+  rdfs:label "datum" ;
 .
 tern-loc:depth
   a rdf:Property ;
   rdfs:label "depth" ;
 .
 tern-loc:elevation
-  a owl:ObjectProperty ;
+  a rdf:Property ;
   rdfs:label "elevation" ;
   rdfs:subPropertyOf schema:elevation ;
 .
@@ -190,7 +226,7 @@ tern-loc:isLocationOf
   owl:inverseOf tern-loc:location ;
 .
 tern-loc:latitude
-  a owl:ObjectProperty ;
+  a rdf:Property ;
   rdfs:label "latitude" ;
   rdfs:subPropertyOf geo:lat ;
 .
@@ -203,7 +239,7 @@ tern-loc:location
   owl:inverseOf tern-loc:isLocationOf ;
 .
 tern-loc:longitude
-  a owl:ObjectProperty ;
+  a rdf:Property ;
   rdfs:label "longitude" ;
   rdfs:subPropertyOf geo:long ;
 .
