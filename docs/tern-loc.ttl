@@ -221,7 +221,7 @@ tern-loc:wktLiteral
   rdfs:comment "A Well-known Text serialization of a geometry object." ;
   rdfs:label "wkt literal" ;
   rdfs:subClassOf geosparql:wktLiteral ;
-  skos:editorialNote "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation)." ;
+  skos:editorialNote "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360." ;
 .
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
   schema:alternateName "TERN" ;
