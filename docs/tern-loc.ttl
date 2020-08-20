@@ -10,6 +10,7 @@
 # prefix: tern-loc
 
 @prefix : <https://w3id.org/tern/ontologies/loc/> .
+@prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
@@ -17,12 +18,11 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix data: <http://linked.data.gov.au/def/datatype/> .
-@prefix sf: <http://www.opengis.net/ont/sf#> .
 
 tern-loc:
   a owl:Ontology ;
@@ -44,7 +44,7 @@ tern-loc:
   owl:imports dct: ;
   owl:imports <http://topbraid.org/schema/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
-  owl:imports <http://www.opengis.net/ont/sf#> ;
+  owl:imports sf: ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports skos: ;
   owl:imports <http://www.w3.org/ns/locn#> ;
@@ -53,10 +53,9 @@ tern-loc:
   owl:versionInfo "0.0.7" ;
 .
 tern-loc:LineString
-  a rdfs:Class ;
   a owl:Class ;
   rdfs:label "Line string" ;
-  rdfs:subClassOf <http://www.opengis.net/ont/sf#LineString> ;
+  rdfs:subClassOf sf:LineString ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:onDataRange tern-loc:wktLiteral ;
@@ -65,7 +64,7 @@ tern-loc:LineString
     ] ;
 .
 tern-loc:Location
-  a rdfs:Class ;
+  a owl:Class ;
   rdfs:label "Location" ;
   rdfs:subClassOf dct:Location ;
   rdfs:subClassOf geosparql:Feature ;
@@ -84,36 +83,36 @@ tern-loc:Location
 tern-loc:Point
   a owl:Class ;
   rdfs:label "Point" ;
-  rdfs:subClassOf <http://www.opengis.net/ont/sf#Point> ;
+  rdfs:subClassOf sf:Point ;
   rdfs:subClassOf geo:Point ;
   rdfs:subClassOf <http://www.w3.org/ns/locn#Geometry> ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass data:QuantitativeMeasure ;
       owl:onProperty tern-loc:altitude ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass data:QuantitativeMeasure ;
       owl:onProperty tern-loc:depth ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass data:QuantitativeMeasure ;
       owl:onProperty tern-loc:elevation ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass data:QuantitativeMeasure ;
       owl:onProperty tern-loc:latitude ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass data:QuantitativeMeasure ;
       owl:onProperty tern-loc:longitude ;
       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
@@ -125,10 +124,9 @@ tern-loc:Point
     ] ;
 .
 tern-loc:Polygon
-  a rdfs:Class ;
   a owl:Class ;
   rdfs:label "Polygon" ;
-  rdfs:subClassOf <http://www.opengis.net/ont/sf#Polygon> ;
+  rdfs:subClassOf sf:Polygon ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:onDataRange tern-loc:wktLiteral ;

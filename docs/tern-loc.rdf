@@ -8,185 +8,183 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66">
-    <schema:alternateName>TERN</schema:alternateName>
-    <schema:url rdf:resource="https://www.tern.org.au/"/>
-    <schema:name>Terrestrial Ecosystem Research Network</schema:name>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/">
+    <rdfs:comment>An alignment of a few widely used ontologies for describing locations, features and geometries.</rdfs:comment>
+    <owl:imports rdf:resource="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf"/>
+    <rdfs:seeAlso rdf:resource="https://github.com/ternaustralia/ontology_tern-loc"/>
+    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-12</dct:modified>
+    <vann:preferredNamespacePrefix>tern-loc</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/tern/ontologies/loc/</vann:preferredNamespaceUri>
+    <owl:imports rdf:resource="http://www.w3.org/ns/locn#"/>
+    <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+    <owl:imports rdf:resource="http://topbraid.org/schema/"/>
+    <owl:versionInfo>0.0.7</owl:versionInfo>
+    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
+    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
+    <dct:publisher rdf:resource="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66"/>
+    <rdfs:label>TERN Location Alignment Ontology</rdfs:label>
+    <owl:versionIRI rdf:resource="https://w3id.org/tern/ontologies/loc/0.0.7"/>
+    <dct:creator rdf:nodeID="ub1bL29C15"/>
+    <owl:imports rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos"/>
+    <owl:imports rdf:resource="http://www.opengis.net/ont/sf#"/>
+    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-05-01</dct:created>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/Location">
+    <rdfs:label>Location</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="ub1bL70C19"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/Location"/>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL75C19"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL112C19">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
+    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/longitude"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/Point">
+    <rdfs:subClassOf rdf:nodeID="ub1bL100C19"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL106C19"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL88C19"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL94C19"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL112C19"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL118C19"/>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Point"/>
+    <rdfs:label>Point</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/locn#Geometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/datum">
+    <rdfs:comment>Value should be from a controlled vocabulary with a unique identifier.</rdfs:comment>
+    <skos:example>&lt;http://www.opengis.net/def/datum/EPSG/0/6326&gt;</skos:example>
+    <rdfs:label>datum</rdfs:label>
+    <skos:editorialNote>This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84.</skos:editorialNote>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/location">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>location</rdfs:label>
+    <rdfs:range rdf:resource="https://w3id.org/tern/ontologies/loc/Location"/>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/locn#location"/>
+    <owl:inverseOf rdf:resource="https://w3id.org/tern/ontologies/loc/isLocationOf"/>
+    <rdfs:comment>Relate a thing to a Location.</rdfs:comment>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/longitude">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label>longitude</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL106C19">
+    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/latitude"/>
+    <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/latitude">
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label>latitude</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/altitude">
+    <rdfs:label>altitude</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL58C19">
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onDataRange rdf:resource="https://w3id.org/tern/ontologies/loc/wktLiteral"/>
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL100C19">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
+    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/elevation"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/Polygon">
+    <rdfs:label>Polygon</rdfs:label>
+    <rdfs:subClassOf rdf:nodeID="ub1bL129C19"/>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Polygon"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/elevation">
+    <rdfs:label>elevation</rdfs:label>
+    <rdfs:subPropertyOf rdf:resource="http://schema.org/elevation"/>
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
   </rdf:Description>
   <rdf:Description rdf:nodeID="ub1bL29C15">
+    <schema:identifier>https://orcid.org/0000-0002-6047-9864</schema:identifier>
     <rdf:type rdf:resource="http://schema.org/Person"/>
     <schema:affiliation rdf:resource="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66"/>
     <schema:email>e.chuc@uq.edu.au</schema:email>
     <schema:name>Edmond Chuc</schema:name>
-    <schema:identifier>https://orcid.org/0000-0002-6047-9864</schema:identifier>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL76C19">
-    <owl:onClass rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL131C19">
-    <owl:onDataRange rdf:resource="https://w3id.org/tern/ontologies/loc/wktLiteral"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/longitude">
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#long"/>
-    <rdfs:label>longitude</rdfs:label>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/depth">
     <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:label>depth</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/">
-    <rdfs:label>TERN Location Alignment Ontology</rdfs:label>
-    <rdfs:comment>An alignment of a few widely used ontologies for describing locations, features and geometries.</rdfs:comment>
-    <owl:versionIRI rdf:resource="https://w3id.org/tern/ontologies/loc/0.0.7"/>
-    <dct:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-05-01</dct:created>
-    <dct:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2020-08-12</dct:modified>
-    <owl:imports rdf:resource="http://topbraid.org/schema/"/>
-    <owl:imports rdf:resource="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf"/>
-    <dct:creator rdf:nodeID="ub1bL29C15"/>
-    <owl:versionInfo>0.0.7</owl:versionInfo>
-    <rdfs:seeAlso rdf:resource="https://github.com/ternaustralia/ontology_tern-loc"/>
-    <owl:imports rdf:resource="http://www.opengis.net/ont/sf#"/>
-    <vann:preferredNamespacePrefix>tern-loc</vann:preferredNamespacePrefix>
-    <owl:imports rdf:resource="http://purl.org/dc/terms/"/>
-    <vann:preferredNamespaceUri>https://w3id.org/tern/ontologies/loc/</vann:preferredNamespaceUri>
-    <owl:imports rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos"/>
-    <owl:imports rdf:resource="http://www.w3.org/ns/locn#"/>
-    <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core#"/>
-    <dct:publisher rdf:resource="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL71C19">
-    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/isLocationOf"/>
-    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL119C19">
-    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onDataRange rdf:resource="https://w3id.org/tern/ontologies/loc/wktLiteral"/>
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/isLocationOf">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/tern/ontologies/loc/Location"/>
-    <rdfs:label>is location of</rdfs:label>
-    <owl:inverseOf rdf:resource="https://w3id.org/tern/ontologies/loc/location"/>
-    <rdfs:comment>Relate a Location to a thing.</rdfs:comment>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/Location">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:label>Location</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://purl.org/dc/terms/Location"/>
-    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL71C19"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL76C19"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/LineString">
-    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#LineString"/>
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL59C19"/>
-    <rdfs:label>Line string</rdfs:label>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL95C19">
+  <rdf:Description rdf:nodeID="ub1bL94C19">
     <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
     <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
     <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/depth"/>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/wktLiteral">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
-    <skos:editorialNote>Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360.</skos:editorialNote>
-    <rdfs:comment>A Well-known Text serialization of a geometry object.</rdfs:comment>
-    <rdfs:label>wkt literal</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/isLocationOf">
+    <rdfs:domain rdf:resource="https://w3id.org/tern/ontologies/loc/Location"/>
+    <rdfs:comment>Relate a Location to a thing.</rdfs:comment>
+    <owl:inverseOf rdf:resource="https://w3id.org/tern/ontologies/loc/location"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:label>is location of</rdfs:label>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/latitude">
-    <rdfs:label>latitude</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#lat"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/Point">
-    <rdfs:subClassOf rdf:nodeID="ub1bL89C19"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL113C19"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL119C19"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL95C19"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL107C19"/>
-    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Point"/>
-    <rdfs:subClassOf rdf:nodeID="ub1bL101C19"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/locn#Geometry"/>
-    <rdfs:label>Point</rdfs:label>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL89C19">
-    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/altitude"/>
+  <rdf:Description rdf:nodeID="ub1bL88C19">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/altitude"/>
     <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
     <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL107C19">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/latitude"/>
-    <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL113C19">
-    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/longitude"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/Polygon">
-    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
-    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#Polygon"/>
-    <rdfs:label>Polygon</rdfs:label>
-    <rdfs:subClassOf rdf:nodeID="ub1bL131C19"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL59C19">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+  <rdf:Description rdf:nodeID="ub1bL118C19">
     <owl:onDataRange rdf:resource="https://w3id.org/tern/ontologies/loc/wktLiteral"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
     <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
     <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/location">
-    <rdfs:range rdf:resource="https://w3id.org/tern/ontologies/loc/Location"/>
-    <rdfs:comment>Relate a thing to a Location.</rdfs:comment>
-    <rdfs:label>location</rdfs:label>
-    <owl:inverseOf rdf:resource="https://w3id.org/tern/ontologies/loc/isLocationOf"/>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/locn#location"/>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/wktLiteral">
+    <rdfs:comment>A Well-known Text serialization of a geometry object.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Datatype"/>
+    <skos:editorialNote>Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360.</skos:editorialNote>
+    <rdfs:label>wkt literal</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#wktLiteral"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/elevation">
-    <rdfs:subPropertyOf rdf:resource="http://schema.org/elevation"/>
-    <rdfs:label>elevation</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/datum">
-    <skos:editorialNote>This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84.</skos:editorialNote>
-    <rdfs:label>datum</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:comment>Value should be from a controlled vocabulary with a unique identifier.</rdfs:comment>
-    <skos:example>&lt;http://www.opengis.net/def/datum/EPSG/0/6326&gt;</skos:example>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/altitude">
-    <rdfs:label>altitude</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#alt"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="ub1bL101C19">
-    <owl:onClass rdf:resource="http://linked.data.gov.au/def/datatype/QuantitativeMeasure"/>
-    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/elevation"/>
+  <rdf:Description rdf:nodeID="ub1bL129C19">
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#asWKT"/>
+    <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
-    <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+    <owl:onDataRange rdf:resource="https://w3id.org/tern/ontologies/loc/wktLiteral"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/depth">
-    <rdfs:label>depth</rdfs:label>
-    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+  <rdf:Description rdf:nodeID="ub1bL70C19">
+    <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minCardinality>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onProperty rdf:resource="https://w3id.org/tern/ontologies/loc/isLocationOf"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="ub1bL75C19">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:onClass rdf:resource="http://www.opengis.net/ont/geosparql#Geometry"/>
+    <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+    <owl:onProperty rdf:resource="http://www.opengis.net/ont/geosparql#hasGeometry"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66">
+    <schema:url rdf:resource="https://www.tern.org.au/"/>
+    <schema:alternateName>TERN</schema:alternateName>
+    <schema:name>Terrestrial Ecosystem Research Network</schema:name>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/tern/ontologies/loc/LineString">
+    <rdfs:label>Line string</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/sf#LineString"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="ub1bL58C19"/>
   </rdf:Description>
 </rdf:RDF>

@@ -12,36 +12,6 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-tern-loc:LineString a rdfs:Class,
-        owl:Class ;
-    rdfs:label "Line string" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        sf:LineString .
-
-tern-loc:Location a rdfs:Class ;
-    rdfs:label "Location" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:isLocationOf ],
-        [ a owl:Restriction ;
-            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass geosparql:Geometry ;
-            owl:onProperty geosparql:hasGeometry ],
-        dct:Location,
-        geosparql:Feature .
-
-tern-loc:Polygon a rdfs:Class,
-        owl:Class ;
-    rdfs:label "Polygon" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        sf:Polygon .
-
 tern-loc: a owl:Ontology ;
     rdfs:label "TERN Location Alignment Ontology" ;
     dct:created "2020-05-01"^^xsd:date ;
@@ -66,6 +36,14 @@ tern-loc: a owl:Ontology ;
         <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
     owl:versionIRI tern-loc:0.0.7 ;
     owl:versionInfo "0.0.7" .
+
+tern-loc:LineString a owl:Class ;
+    rdfs:label "Line string" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange tern-loc:wktLiteral ;
+            owl:onProperty geosparql:asWKT ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        sf:LineString .
 
 tern-loc:Point a owl:Class ;
     rdfs:label "Point" ;
@@ -96,6 +74,14 @@ tern-loc:Point a owl:Class ;
         sf:Point,
         geo:Point,
         <http://www.w3.org/ns/locn#Geometry> .
+
+tern-loc:Polygon a owl:Class ;
+    rdfs:label "Polygon" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onDataRange tern-loc:wktLiteral ;
+            owl:onProperty geosparql:asWKT ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        sf:Polygon .
 
 tern-loc:datum a rdf:Property ;
     rdfs:label "datum" ;
@@ -128,6 +114,18 @@ tern-loc:location a owl:ObjectProperty ;
 tern-loc:longitude a rdf:Property ;
     rdfs:label "longitude" ;
     rdfs:subPropertyOf geo:long .
+
+tern-loc:Location a owl:Class ;
+    rdfs:label "Location" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:isLocationOf ],
+        [ a owl:Restriction ;
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass geosparql:Geometry ;
+            owl:onProperty geosparql:hasGeometry ],
+        dct:Location,
+        geosparql:Feature .
 
 tern-loc:isLocationOf a owl:ObjectProperty ;
     rdfs:label "is location of" ;
