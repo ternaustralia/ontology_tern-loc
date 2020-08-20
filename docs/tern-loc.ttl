@@ -21,6 +21,8 @@
 @prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix data: <http://linked.data.gov.au/def/datatype/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 
 tern-loc:
   a owl:Ontology ;
@@ -57,13 +59,9 @@ tern-loc:LineString
   rdfs:subClassOf <http://www.opengis.net/ont/sf#LineString> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern-loc:wktLiteral ;
+      owl:onDataRange tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty geosparql:asWKT ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
 .
 tern-loc:Location
@@ -74,17 +72,13 @@ tern-loc:Location
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty geosparql:hasGeometry ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:minCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern-loc:isLocationOf ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass geosparql:Geometry ;
       owl:onProperty geosparql:hasGeometry ;
-      owl:someValuesFrom geosparql:Geometry ;
     ] ;
 .
 tern-loc:Point
@@ -95,63 +89,39 @@ tern-loc:Point
   rdfs:subClassOf <http://www.w3.org/ns/locn#Geometry> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:altitude ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:depth ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:elevation ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:latitude ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+      owl:onClass <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
       owl:onProperty tern-loc:longitude ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern-loc:wktLiteral ;
+      owl:onDataRange tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:latitude ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:longitude ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:altitude ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:depth ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty tern-loc:elevation ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
 .
 tern-loc:Polygon
@@ -161,13 +131,9 @@ tern-loc:Polygon
   rdfs:subClassOf <http://www.opengis.net/ont/sf#Polygon> ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom tern-loc:wktLiteral ;
+      owl:onDataRange tern-loc:wktLiteral ;
       owl:onProperty geosparql:asWKT ;
-    ] ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:cardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onProperty geosparql:asWKT ;
+      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
     ] ;
 .
 tern-loc:altitude

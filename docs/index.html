@@ -4,17 +4,226 @@
   <title>
    TERN Location Alignment Ontology
   </title>
-  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+  <style>
+   #pylode {
+            position: fixed;
+            top: 130px;
+            left: -60px;
+            font-size: small;
+            transform: rotate(-90deg);
+            color: grey;
+        }
+        #pylode a {
+            font-size: 2em;
+            font-weight: bold;
+            text-decoration: none;
+            color: #005A9C;
+        }
+        #pylode a:hover {
+            color: #333;
+        }
+
+        .cardinality {
+            font-style: italic;
+            color: #aa00aa;
+        }
+
+        dt {
+            font-weight: bold;
+            padding: 5px 0 5px 0;
+        }
+
+        ul.hlist {
+            list-style-type: none;
+            border: 1px solid navy;
+            padding:5px;
+            background-color: #F4FFFF;
+        }
+
+        ul.hierarchy {
+            border: 1px solid navy;
+            padding: 5px 25px 5px 25px;
+            background-color: #F4FFFF;
+        }
+
+
+        ul.hlist li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        .entity {
+            border: 1px solid navy;
+            margin:5px 0 5px 0;
+            padding: 5px;
+        }
+
+        .entity th {
+            width: 150px;
+            vertical-align: top;
+        }
+
+        .entity th,
+        .entity td {
+            padding-bottom: 20px;
+        }
+
+        .entity table th {
+            text-align: left;
+        }
+
+        section#overview img {
+            max-width: 1000px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            text-align: left
+        }
+        h1, h2, h3 {
+            color: #005A9C; background: white
+        }
+        h1 {
+            font: 170% sans-serif;
+            line-height: 110%;
+        }
+        h2 {
+            font: 140% sans-serif;
+            margin-top:40px;
+        }
+        h3 {
+            font: 120% sans-serif;
+            margin-top: 3px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid navy;
+        }
+        h4 { font: bold 100% sans-serif }
+        h5 { font: italic 100% sans-serif }
+        h6 { font: small-caps 100% sans-serif }
+
+
+        body {
+            padding: 2em 70px 2em 70px;
+            margin: 0;
+            font-family: sans-serif;
+            color: black;
+            background: white;
+            background-position: top left;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            text-align: justify;
+        }
+
+        section {
+            max-width: 1500px;
+        }
+
+        .figure {
+            margin-bottom: 20px;
+        }
+
+        :link { color: #00C; background: transparent }
+        :visited { color: #609; background: transparent }
+        a:active { color: #C00; background: transparent }
+
+        .sup-c,
+        .sup-op,
+        .sup-fp,
+        .sup-dp,
+        .sup-ap,
+        .sup-p,
+        .sup-ni,
+        .sup-cp,
+        .sup-cl {
+            cursor:help;
+            margin-left: 3px;
+        }
+
+        .sup-c {
+            color:orange;
+        }
+
+        .sup-op {
+            color:navy;
+        }
+
+        .sup-fp {
+            color:lightskyblue;
+        }
+
+        .sup-dp {
+            color:green;
+        }
+
+        .sup-ap {
+            color:darkred;
+        }
+
+        .sup-p {
+            color:black;
+        }
+
+        .sup-ni {
+            color:brown;
+        }
+
+        .sup-cp {
+            color:orange;
+        }
+
+        .sup-cl {
+            color:darkred;
+        }
+
+        code {
+            font-size: large;
+            color: darkred;
+        }
+
+        /* less prominent links for properties */
+        .proplink {
+            color: #336;
+            text-decoration: none;
+        }
+  </style>
+  <script type="application/ld+json">
+   [
+  {
+    "@id": "https://w3id.org/tern/ontologies/loc/",
+    "@type": [
+      "https://schema.org/DefinedTermSet"
+    ],
+    "https://schema.org/description": [
+      {
+        "@value": "<p>An alignment of a few widely used ontologies for describing locations, features and geometries.</p>"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "TERN Location Alignment Ontology"
+      }
+    ]
+  }
+]
+  </script>
  </head>
  <body>
   <div id="pylode">
    made by
    <a href="http://github.com/rdflib/pyLODE">
-    pyLODE
+    <span style="color:#329545;">
+     p
+    </span>
+    <span style="color:#f9cb33;">
+     y
+    </span>
+    LODE
    </a>
+   <span style="font-size:smaller;">
+    2.8.3
+   </span>
   </div>  <a href="https://www.tern.org.au">
-   <img alt="TERN logo." src="https://swift.rc.nectar.org.au/v1/AUTH_05bca33fce34447ba7033b9305947f11/static-web-assets/tern/2020-04-09/images/logo-mini-all.png"/>
+   <img alt="TERN logo." src="https://swift.rc.nectar.org.au/v1/AUTH_05bca33fce34447ba7033b9305947f11/static-web-assets/tern/2020-04-09/images/logo-mini-all.png">
   </a>
   <h1>
    TERN Location Alignment Ontology
@@ -25,7 +234,7 @@
    </h2>
    <dl>
     <dt>
-     IRI
+     URI
     </dt>
     <dd>
      <code>
@@ -33,37 +242,39 @@
      </code>
     </dd>
     <dt>
-     Publisher(s)
+     <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher">
+      Publisher
+     </a>
+     (s)
     </dt>
     <dd>
-     Terrestrial Ecosystem Research Network
-     <br/>
+     <a href="https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66">
+      None
+     </a>
+     <br>
     </dd>
     <dt>
-     Creator(s)
+     <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator">
+      Creator
+     </a>
+     (s)
     </dt>
     <dd>
-     <a href="https://orcid.org/0000-0002-6047-9864">
-      Edmond Chuc
-     </a>
-     (
-     <a href="mailto:e.chuc@uq.edu.au">
-      e.chuc@uq.edu.au
-     </a>
-     ) of
-     <a href="https://www.tern.org.au/">
-      Terrestrial Ecosystem Research Network
-     </a>
-     <br/>
+     None
+     <br>
     </dd>
     <dt>
-     Created
+     <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/created">
+      Created
+     </a>
     </dt>
     <dd>
      2020-05-01
     </dd>
     <dt>
-     Modified
+     <a class="proplink" href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/modified">
+      Modified
+     </a>
     </dt>
     <dd>
      2020-08-12
@@ -75,52 +286,52 @@
      0.0.7
     </dd>
     <dt>
-     Version IRI
+     Version URI
     </dt>
     <dd>
      <a href="https://w3id.org/tern/ontologies/loc/0.0.7">
-      https://w3id.org/tern/ontologies/loc/0.0.7
+      tern-loc:0.0.7
      </a>
     </dd>
     <dt>
      Imports
     </dt>
     <dd>
-     <a href="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf">
-      https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
-     </a>
-     <br/>
      <a href="http://purl.org/dc/terms/">
       dct:
      </a>
-     <br/>
-     <a href="http://www.w3.org/2004/02/skos/core#">
-      skos:
-     </a>
-     <br/>
-     <a href="http://www.w3.org/ns/locn#">
-      http://www.w3.org/ns/locn#
-     </a>
-     <br/>
+     <br>
      <a href="http://topbraid.org/schema/">
       http://topbraid.org/schema/
      </a>
-     <br/>
-     <a href="http://www.opengis.net/ont/sf#">
-      http://www.opengis.net/ont/sf#
-     </a>
-     <br/>
-     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
-      http://www.w3.org/2003/01/geo/wgs84_pos
-     </a>
-     <br/>
+     <br>
      <a href="http://www.opengis.net/ont/geosparql">
       http://www.opengis.net/ont/geosparql
      </a>
-     <br/>
+     <br>
+     <a href="http://www.opengis.net/ont/sf#">
+      sf:
+     </a>
+     <br>
+     <a href="http://www.w3.org/2003/01/geo/wgs84_pos">
+      http://www.w3.org/2003/01/geo/wgs84_pos
+     </a>
+     <br>
+     <a href="http://www.w3.org/2004/02/skos/core#">
+      skos:
+     </a>
+     <br>
+     <a href="http://www.w3.org/ns/locn#">
+      http://www.w3.org/ns/locn#
+     </a>
+     <br>
+     <a href="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf">
+      https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
+     </a>
+     <br>
     </dd>
     <dt>
-     Ontology Source
+     Ontology RDF
     </dt>
     <dd>
      <a href="tern-loc.ttl">
@@ -167,6 +378,11 @@
       Namespaces
      </a>
     </li>
+    <li>
+     <a href="#legend">
+      Legend
+     </a>
+    </li>
    </ol>
   </section>
   <section id="overview">
@@ -177,7 +393,7 @@
     An overview of the TERN Location Alignment Ontology.
    </p>
    <figure>
-    <img alt="TERN Location Alignment Ontology diagram." src="tern-loc.png"/>
+    <img alt="TERN Location Alignment Ontology diagram." src="tern-loc.png">
     <figcaption style="padding-bottom: 3rem">
      <strong>
       Figure 1:
@@ -191,7 +407,7 @@
     Classes
     <span style="float:right; font-size:smaller;">
      <a href="">
-      &uparrow
+      &amp;uparrow
      </a>
     </span>
    </h2>
@@ -227,7 +443,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -241,12 +457,12 @@
       </th>
       <td>
        <a href="http://www.opengis.net/ont/sf#LineString">
-        http://www.opengis.net/ont/sf#LineString
+        sf:LineString
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
       </td>
      </tr>
      <tr>
@@ -258,23 +474,10 @@
         geosparql:asWKT
        </a>
        <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
-        tern-loc:wktLiteral
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
         exactly
        </span>
        1
-       <br/>
+       <br>
       </td>
      </tr>
     </table>
@@ -289,7 +492,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -308,14 +511,14 @@
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
        <a href="http://www.opengis.net/ont/geosparql#Feature">
         geosparql:Feature
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
       </td>
      </tr>
      <tr>
@@ -323,7 +526,21 @@
        Restrictions
       </th>
       <td>
-       <a href="#islocationof">
+       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
+        geosparql:hasGeometry
+       </a>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <a href="http://www.opengis.net/ont/geosparql#Geometry">
+        geosparql:Geometry
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/isLocationOf">
         tern-loc:isLocationOf
        </a>
        <sup class="sup-op" title="object property">
@@ -333,28 +550,7 @@
         min
        </span>
        1
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
-        geosparql:hasGeometry
-       </a>
-       <span class="cardinality">
-        min
-       </span>
-       1
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
-        geosparql:hasGeometry
-       </a>
-       <span class="cardinality">
-        some
-       </span>
-       <a href="http://www.opengis.net/ont/geosparql#Geometry">
-        geosparql:Geometry
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
+       <br>
       </td>
      </tr>
      <tr>
@@ -362,13 +558,13 @@
        In domain of
       </th>
       <td>
-       <a href="#islocationof">
+       <a href="https://w3id.org/tern/ontologies/loc/isLocationOf">
         tern-loc:isLocationOf
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
-       <br/>
+       <br>
       </td>
      </tr>
      <tr>
@@ -376,13 +572,13 @@
        In range of
       </th>
       <td>
-       <a href="#location">
+       <a href="https://w3id.org/tern/ontologies/loc/location">
         tern-loc:location
        </a>
        <sup class="sup-op" title="object property">
         op
        </sup>
-       <br/>
+       <br>
       </td>
      </tr>
     </table>
@@ -397,7 +593,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -411,26 +607,26 @@
       </th>
       <td>
        <a href="http://www.opengis.net/ont/sf#Point">
-        http://www.opengis.net/ont/sf#Point
+        sf:Point
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
        <a href="http://www.w3.org/ns/locn#Geometry">
         http://www.w3.org/ns/locn#Geometry
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
        <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
         geo:Point
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
       </td>
      </tr>
      <tr>
@@ -438,103 +634,20 @@
        Restrictions
       </th>
       <td>
-       <a href="#depth">
-        tern-loc:depth
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
-        tern-loc:wktLiteral
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#longitude">
+       <a href="https://w3id.org/tern/ontologies/loc/longitude">
         tern-loc:longitude
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
-       <br/>
-       <a href="#elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
-       <a href="#altitude">
-        tern-loc:altitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
        <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+        data:QuantitativeMeasure
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br/>
-       <a href="#longitude">
-        tern-loc:longitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="#depth">
-        tern-loc:depth
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br/>
+       <br>
        <a href="http://www.opengis.net/ont/geosparql#asWKT">
         geosparql:asWKT
        </a>
@@ -542,28 +655,63 @@
         exactly
        </span>
        1
-       <br/>
-       <a href="#altitude">
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/depth">
+        tern-loc:depth
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/altitude">
         tern-loc:altitude
        </a>
        <span class="cardinality">
         max
        </span>
        1
-       <br/>
-       <a href="#latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        only
-       </span>
        <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        http://linked.data.gov.au/def/datatype/QuantitativeMeasure
+        data:QuantitativeMeasure
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/latitude">
+        tern-loc:latitude
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/elevation">
+        tern-loc:elevation
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
       </td>
      </tr>
     </table>
@@ -578,7 +726,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -592,12 +740,12 @@
       </th>
       <td>
        <a href="http://www.opengis.net/ont/sf#Polygon">
-        http://www.opengis.net/ont/sf#Polygon
+        sf:Polygon
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br/>
+       <br>
       </td>
      </tr>
      <tr>
@@ -609,23 +757,10 @@
         geosparql:asWKT
        </a>
        <span class="cardinality">
-        only
-       </span>
-       <a href="https://w3id.org/tern/ontologies/loc/wktLiteral">
-        tern-loc:wktLiteral
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br/>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
         exactly
        </span>
        1
-       <br/>
+       <br>
       </td>
      </tr>
     </table>
@@ -636,7 +771,7 @@
     Object Properties
     <span style="float:right; font-size:smaller;">
      <a href="">
-      &uparrow
+      &amp;uparrow
      </a>
     </span>
    </h2>
@@ -662,7 +797,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -680,10 +815,23 @@
      </tr>
      <tr>
       <th>
+       Inverse properties
+      </th>
+      <td>
+       <a href="https://w3id.org/tern/ontologies/loc/location">
+        tern-loc:location
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+      </td>
+     </tr>
+     <tr>
+      <th>
        Domain(s)
       </th>
       <td>
-       <a href="#Location">
+       <a href="https://w3id.org/tern/ontologies/loc/Location">
         tern-loc:Location
        </a>
        <sup class="sup-c" title="class">
@@ -703,7 +851,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -731,10 +879,23 @@
      </tr>
      <tr>
       <th>
+       Inverse properties
+      </th>
+      <td>
+       <a href="https://w3id.org/tern/ontologies/loc/isLocationOf">
+        tern-loc:isLocationOf
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+      </td>
+     </tr>
+     <tr>
+      <th>
        Range(s)
       </th>
       <td>
-       <a href="#Location">
+       <a href="https://w3id.org/tern/ontologies/loc/Location">
         tern-loc:Location
        </a>
        <sup class="sup-c" title="class">
@@ -750,7 +911,7 @@
     Properties
     <span style="float:right; font-size:smaller;">
      <a href="">
-      &uparrow
+      &amp;uparrow
      </a>
     </span>
    </h2>
@@ -796,7 +957,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -826,7 +987,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -842,6 +1003,16 @@
        Value should be from a controlled vocabulary with a unique identifier.
       </td>
      </tr>
+     <tr>
+      <th>
+       Example
+      </th>
+      <td>
+       <pre>
+                      <http: 0="" 6326="" datum="" def="" epsg="" www.opengis.net="">
+                    </http:></pre>
+      </td>
+     </tr>
     </table>
    </div>
    <div class="entity property" id="depth">
@@ -854,7 +1025,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -874,7 +1045,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -904,7 +1075,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -934,7 +1105,7 @@
     <table>
      <tr>
       <th>
-       IRI
+       URI
       </th>
       <td>
        <code>
@@ -955,24 +1126,34 @@
     </table>
    </div>
   </section>
+  <section id="namedindividuals">
+   <h2>
+    Named Individuals
+    <span style="float:right; font-size:smaller;">
+     <a href="">
+      &amp;uparrow
+     </a>
+    </span>
+   </h2>
+   <ul class="hlist">
+   </ul>
+  </section>
   <section id="namespaces">
    <h2>
     Namespaces
     <span style="float:right; font-size:smaller;">
      <a href="">
-      &uparrow
+      &amp;uparrow
      </a>
     </span>
    </h2>
    <dl>
     <dt>
-     <em>
-      default (:)
-     </em>
+     data
     </dt>
     <dd>
      <code>
-      https://w3id.org/tern/ontologies/loc/
+      http://linked.data.gov.au/def/datatype/
      </code>
     </dd>
     <dt>
@@ -1008,6 +1189,14 @@
      </code>
     </dd>
     <dt>
+     prov
+    </dt>
+    <dd>
+     <code>
+      http://www.w3.org/ns/prov#
+     </code>
+    </dd>
+    <dt>
      rdf
     </dt>
     <dd>
@@ -1032,6 +1221,22 @@
      </code>
     </dd>
     <dt>
+     sdo
+    </dt>
+    <dd>
+     <code>
+      https://schema.org/
+     </code>
+    </dd>
+    <dt>
+     sf
+    </dt>
+    <dd>
+     <code>
+      http://www.opengis.net/ont/sf#
+     </code>
+    </dd>
+    <dt>
      skos
     </dt>
     <dd>
@@ -1053,14 +1258,6 @@
     <dd>
      <code>
       http://purl.org/vocab/vann/
-     </code>
-    </dd>
-    <dt>
-     xml
-    </dt>
-    <dd>
-     <code>
-      http://www.w3.org/XML/1998/namespace
      </code>
     </dd>
     <dt>

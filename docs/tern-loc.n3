@@ -1,4 +1,4 @@
-@prefix : <https://w3id.org/tern/ontologies/loc/> .
+@prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
@@ -6,34 +6,30 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix schema: <http://schema.org/> .
+@prefix sf: <http://www.opengis.net/ont/sf#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix tern-loc: <https://w3id.org/tern/ontologies/loc/> .
 @prefix vann: <http://purl.org/vocab/vann/> .
-@prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 tern-loc:LineString a rdfs:Class,
         owl:Class ;
     rdfs:label "Line string" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:asWKT ],
-        <http://www.opengis.net/ont/sf#LineString> .
+            owl:onDataRange tern-loc:wktLiteral ;
+            owl:onProperty geosparql:asWKT ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        sf:LineString .
 
 tern-loc:Location a rdfs:Class ;
     rdfs:label "Location" ;
     rdfs:subClassOf [ a owl:Restriction ;
             owl:minCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:hasGeometry ],
-        [ a owl:Restriction ;
-            owl:minCardinality "1"^^xsd:nonNegativeInteger ;
             owl:onProperty tern-loc:isLocationOf ],
         [ a owl:Restriction ;
-            owl:onProperty geosparql:hasGeometry ;
-            owl:someValuesFrom geosparql:Geometry ],
+            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass geosparql:Geometry ;
+            owl:onProperty geosparql:hasGeometry ],
         dct:Location,
         geosparql:Feature .
 
@@ -41,12 +37,10 @@ tern-loc:Polygon a rdfs:Class,
         owl:Class ;
     rdfs:label "Polygon" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:asWKT ],
-        <http://www.opengis.net/ont/sf#Polygon> .
+            owl:onDataRange tern-loc:wktLiteral ;
+            owl:onProperty geosparql:asWKT ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        sf:Polygon .
 
 tern-loc: a owl:Ontology ;
     rdfs:label "TERN Location Alignment Ontology" ;
@@ -65,53 +59,41 @@ tern-loc: a owl:Ontology ;
     owl:imports dct:,
         <http://topbraid.org/schema/>,
         <http://www.opengis.net/ont/geosparql>,
-        <http://www.opengis.net/ont/sf#>,
+        sf:,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
         skos:,
         <http://www.w3.org/ns/locn#>,
         <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
-    owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.7> ;
+    owl:versionIRI tern-loc:0.0.7 ;
     owl:versionInfo "0.0.7" .
 
 tern-loc:Point a owl:Class ;
     rdfs:label "Point" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
-            owl:onProperty tern-loc:depth ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass data:QuantitativeMeasure ;
             owl:onProperty tern-loc:elevation ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
-            owl:onProperty tern-loc:latitude ],
+            owl:onClass data:QuantitativeMeasure ;
+            owl:onProperty tern-loc:latitude ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
-            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
-            owl:onProperty tern-loc:longitude ],
+            owl:onClass data:QuantitativeMeasure ;
+            owl:onProperty tern-loc:longitude ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
-            owl:allValuesFrom tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ],
+            owl:onDataRange tern-loc:wktLiteral ;
+            owl:onProperty geosparql:asWKT ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
         [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty geosparql:asWKT ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:latitude ],
-        [ a owl:Restriction ;
-            owl:cardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:longitude ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass data:QuantitativeMeasure ;
             owl:onProperty tern-loc:altitude ],
         [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onClass data:QuantitativeMeasure ;
             owl:onProperty tern-loc:depth ],
-        [ a owl:Restriction ;
-            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onProperty tern-loc:elevation ],
-        [ a owl:Restriction ;
-            owl:allValuesFrom <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> ;
-            owl:onProperty tern-loc:altitude ],
-        <http://www.opengis.net/ont/sf#Point>,
+        sf:Point,
         geo:Point,
         <http://www.w3.org/ns/locn#Geometry> .
 
@@ -120,13 +102,6 @@ tern-loc:datum a rdf:Property ;
     rdfs:comment "Value should be from a controlled vocabulary with a unique identifier." ;
     skos:editorialNote "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." ;
     skos:example "<http://www.opengis.net/def/datum/EPSG/0/6326>" .
-
-tern-loc:location a owl:ObjectProperty ;
-    rdfs:label "location" ;
-    rdfs:comment "Relate a thing to a Location." ;
-    rdfs:range tern-loc:Location ;
-    rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
-    owl:inverseOf tern-loc:isLocationOf .
 
 tern-loc:altitude a rdf:Property ;
     rdfs:label "altitude" ;
@@ -139,19 +114,26 @@ tern-loc:elevation a rdf:Property ;
     rdfs:label "elevation" ;
     rdfs:subPropertyOf schema:elevation .
 
+tern-loc:latitude a rdf:Property ;
+    rdfs:label "latitude" ;
+    rdfs:subPropertyOf geo:lat .
+
+tern-loc:location a owl:ObjectProperty ;
+    rdfs:label "location" ;
+    rdfs:comment "Relate a thing to a Location." ;
+    rdfs:range tern-loc:Location ;
+    rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
+    owl:inverseOf tern-loc:isLocationOf .
+
+tern-loc:longitude a rdf:Property ;
+    rdfs:label "longitude" ;
+    rdfs:subPropertyOf geo:long .
+
 tern-loc:isLocationOf a owl:ObjectProperty ;
     rdfs:label "is location of" ;
     rdfs:comment "Relate a Location to a thing." ;
     rdfs:domain tern-loc:Location ;
     owl:inverseOf tern-loc:location .
-
-tern-loc:latitude a rdf:Property ;
-    rdfs:label "latitude" ;
-    rdfs:subPropertyOf geo:lat .
-
-tern-loc:longitude a rdf:Property ;
-    rdfs:label "longitude" ;
-    rdfs:subPropertyOf geo:long .
 
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> schema:alternateName "TERN" ;
     schema:name "Terrestrial Ecosystem Research Network" ;
