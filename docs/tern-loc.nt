@@ -1,128 +1,127 @@
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> .
-<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/Location> .
-_:ub1bL112C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/longitude> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://github.com/ternaustralia/ontology_tern-loc> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL94C19 .
-<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/modified> "2020-08-12"^^<http://www.w3.org/2001/XMLSchema#date> .
-<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2004/02/skos/core#editorialNote> "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." .
-<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#label> "location" .
-<https://w3id.org/tern/ontologies/loc/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/tern/ontologies/loc/" .
-<https://w3id.org/tern/ontologies/loc/longitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/locn#> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
-_:ub1bL112C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://topbraid.org/schema/> .
-_:ub1bL106C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/latitude> <http://www.w3.org/2000/01/rdf-schema#label> "latitude" .
-<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/publisher> <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL106C19 .
-<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2004/02/skos/core#example> "<http://www.opengis.net/def/datum/EPSG/0/6326>" .
-<https://w3id.org/tern/ontologies/loc/altitude> <http://www.w3.org/2000/01/rdf-schema#label> "altitude" .
-<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2000/01/rdf-schema#label> "datum" .
-<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL75C19 .
-_:ub1bL58C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
-_:ub1bL100C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/elevation> .
 <https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2003/01/geo/wgs84_pos> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/sf#> .
-<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/2000/01/rdf-schema#label> "Polygon" .
-<https://w3id.org/tern/ontologies/loc/elevation> <http://www.w3.org/2000/01/rdf-schema#label> "elevation" .
-_:ub1bL29C15 <http://schema.org/email> "e.chuc@uq.edu.au" .
-<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2000/01/rdf-schema#comment> "Value should be from a controlled vocabulary with a unique identifier." .
-<https://w3id.org/tern/ontologies/loc/latitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
-_:ub1bL29C15 <http://schema.org/identifier> "https://orcid.org/0000-0002-6047-9864" .
-<https://w3id.org/tern/ontologies/loc/depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
-<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/locn#location> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL88C19 .
-_:ub1bL94C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
-<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tern/ontologies/loc/Location> .
-<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL129C19 .
-_:ub1bL88C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
-_:ub1bL29C15 <http://schema.org/affiliation> <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> .
-_:ub1bL118C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.7" .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/dc/terms/> .
-<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#comment> "Relate a thing to a Location." .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/locn#Geometry> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
-<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#wktLiteral> .
-_:ub1bL58C19 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tern/ontologies/loc/wktLiteral> .
-<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relate a Location to a thing." .
 <https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2000/01/rdf-schema#Datatype> .
-_:ub1bL129C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
-_:ub1bL100C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
-<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/creator> _:ub1bL29C15 .
-_:ub1bL70C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:ub1bL58C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:ub1bL75C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/created> "2020-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
-_:ub1bL106C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2000/01/rdf-schema#comment> "An alignment of a few widely used ontologies for describing locations, features and geometries." .
-<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
-<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL70C19 .
-_:ub1bL118C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
-<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> <http://schema.org/alternateName> "TERN" .
-_:ub1bL75C19 <http://www.w3.org/2002/07/owl#onClass> <http://www.opengis.net/ont/geosparql#Geometry> .
 _:ub1bL106C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:ub1bL88C19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
-<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
-_:ub1bL112C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:ub1bL100C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/tern/ontologies/loc/altitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2003/01/geo/wgs84_pos#alt> .
-_:ub1bL100C19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:ub1bL129C19 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tern/ontologies/loc/wktLiteral> .
-<https://w3id.org/tern/ontologies/loc/longitude> <http://www.w3.org/2000/01/rdf-schema#label> "longitude" .
-_:ub1bL70C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/isLocationOf> .
-_:ub1bL118C19 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tern/ontologies/loc/wktLiteral> .
-<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tern/ontologies/loc/Location> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2000/01/rdf-schema#label> "TERN Location Alignment Ontology" .
-<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> <http://schema.org/url> <https://www.tern.org.au/> .
-_:ub1bL88C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/altitude> .
-<https://w3id.org/tern/ontologies/loc/altitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-_:ub1bL29C15 <http://schema.org/name> "Edmond Chuc" .
-_:ub1bL129C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#label> "is location of" .
-_:ub1bL29C15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
-_:ub1bL129C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/sf#Point> .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
-<https://w3id.org/tern/ontologies/loc/longitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/2000/01/rdf-schema#label> "Line string" .
-<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/tern/ontologies/loc/location> .
-<https://w3id.org/tern/ontologies/loc/latitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-_:ub1bL94C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/depth> .
-<https://w3id.org/tern/ontologies/loc/elevation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
-<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/tern/ontologies/loc/isLocationOf> .
-<https://w3id.org/tern/ontologies/loc/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tern-loc" .
-<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/sf#Polygon> .
-_:ub1bL75C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL112C19 .
-<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> <http://schema.org/name> "Terrestrial Ecosystem Research Network" .
-<https://w3id.org/tern/ontologies/loc/depth> <http://www.w3.org/2000/01/rdf-schema#label> "depth" .
-_:ub1bL75C19 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL118C19 .
-_:ub1bL106C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/latitude> .
-_:ub1bL118C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/elevation> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://schema.org/elevation> .
 <https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/2004/02/skos/core#> .
-<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2000/01/rdf-schema#comment> "A Well-known Text serialization of a geometry object." .
-<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL100C19 .
-<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL58C19 .
-<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
-_:ub1bL70C19 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2000/01/rdf-schema#label> "wkt literal" .
-<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/tern/ontologies/loc/0.0.7> .
-<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/sf#LineString> .
-_:ub1bL94C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:ub1bL58C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-_:ub1bL88C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
-_:ub1bL94C19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
-<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2004/02/skos/core#editorialNote> "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360." .
-_:ub1bL112C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
+_:ub1bL100C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:ub1bL129C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/elevation> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
 <https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+_:ub1bL29C15 <http://schema.org/affiliation> <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> .
+<https://w3id.org/tern/ontologies/loc/longitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/ns/locn#Geometry> .
+_:ub1bL94C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
+<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#label> "is location of" .
+<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/modified> "2020-08-12"^^<http://www.w3.org/2001/XMLSchema#date> .
+_:ub1bL70C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/isLocationOf> .
+_:ub1bL129C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/elevation> <http://www.w3.org/2000/01/rdf-schema#label> "elevation" .
+<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2004/02/skos/core#editorialNote> "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." .
+<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/ns/locn#location> .
+<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#comment> "Relate a thing to a Location." .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#versionInfo> "0.0.7" .
+_:ub1bL118C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL112C19 .
+<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2000/01/rdf-schema#label> "wkt literal" .
+<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/created> "2020-05-01"^^<http://www.w3.org/2001/XMLSchema#date> .
+_:ub1bL75C19 <http://www.w3.org/2002/07/owl#minQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> <http://schema.org/url> <https://www.tern.org.au/> .
+<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/tern/ontologies/loc/location> .
+<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2000/01/rdf-schema#label> "datum" .
+<https://w3id.org/tern/ontologies/loc/latitude> <http://www.w3.org/2000/01/rdf-schema#label> "latitude" .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL88C19 .
+_:ub1bL100C19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/> <http://purl.org/vocab/vann/preferredNamespaceUri> "https://w3id.org/tern/ontologies/loc/" .
+_:ub1bL94C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#label> "location" .
+<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#comment> "Relate a Location to a thing." .
+_:ub1bL129C19 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tern/ontologies/loc/wktLiteral> .
+<https://w3id.org/tern/ontologies/loc/> <http://purl.org/vocab/vann/preferredNamespacePrefix> "tern-loc" .
+<https://w3id.org/tern/ontologies/loc/altitude> <http://www.w3.org/2000/01/rdf-schema#label> "altitude" .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#versionIRI> <https://w3id.org/tern/ontologies/loc/0.0.7> .
+<https://w3id.org/tern/ontologies/loc/depth> <http://www.w3.org/2000/01/rdf-schema#label> "depth" .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL118C19 .
+<https://w3id.org/tern/ontologies/loc/longitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2003/01/geo/wgs84_pos#long> .
+<https://w3id.org/tern/ontologies/loc/latitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2003/01/geo/wgs84_pos#lat> .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#label> "Point" .
+_:ub1bL118C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
+<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL58C19 .
+<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://purl.org/dc/terms/Location> .
+_:ub1bL88C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/altitude> .
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> <http://schema.org/alternateName> "TERN" .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL100C19 .
+<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/2000/01/rdf-schema#label> "Line string" .
+_:ub1bL94C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/depth> .
+<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#wktLiteral> .
+<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#ObjectProperty> .
+<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2000/01/rdf-schema#comment> "A Well-known Text serialization of a geometry object." .
+<https://w3id.org/tern/ontologies/loc/wktLiteral> <http://www.w3.org/2004/02/skos/core#editorialNote> "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360." .
+<https://w3id.org/tern/ontologies/loc/altitude> <http://www.w3.org/2000/01/rdf-schema#subPropertyOf> <http://www.w3.org/2003/01/geo/wgs84_pos#alt> .
+_:ub1bL106C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/latitude> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/sf#> .
+_:ub1bL112C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+_:ub1bL29C15 <http://schema.org/name> "Edmond Chuc" .
+_:ub1bL75C19 <http://www.w3.org/2002/07/owl#onClass> <http://www.opengis.net/ont/geosparql#Geometry> .
+_:ub1bL112C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:ub1bL70C19 <http://www.w3.org/2002/07/owl#minCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2000/01/rdf-schema#comment> "Value should be from a controlled vocabulary with a unique identifier." .
+_:ub1bL58C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
+<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2002/07/owl#inverseOf> <https://w3id.org/tern/ontologies/loc/isLocationOf> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2000/01/rdf-schema#comment> "An alignment of a few widely used ontologies for describing locations, features and geometries." .
+<https://w3id.org/tern/ontologies/loc/datum> <http://www.w3.org/2004/02/skos/core#example> "<http://www.opengis.net/def/datum/EPSG/0/6326>" .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.opengis.net/ont/geosparql> .
+<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/geosparql#Feature> .
+_:ub1bL106C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/sf#Polygon> .
+<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#label> "Location" .
+<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/creator> _:ub1bL29C15 .
+_:ub1bL88C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://purl.org/dc/terms/> .
+_:ub1bL118C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+_:ub1bL29C15 <http://schema.org/email> "e.chuc@uq.edu.au" .
+_:ub1bL75C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2000/01/rdf-schema#label> "TERN Location Alignment Ontology" .
+<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL75C19 .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/sf#Point> .
+<https://w3id.org/tern/ontologies/loc/depth> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+_:ub1bL129C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#asWKT> .
+<https://w3id.org/tern/ontologies/loc/Location> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL70C19 .
+<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/2000/01/rdf-schema#label> "Polygon" .
+_:ub1bL58C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+_:ub1bL112C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
+<https://w3id.org/tern/ontologies/loc/longitude> <http://www.w3.org/2000/01/rdf-schema#label> "longitude" .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+<https://w3id.org/tern/ontologies/loc/Polygon> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL129C19 .
+_:ub1bL75C19 <http://www.w3.org/2002/07/owl#onProperty> <http://www.opengis.net/ont/geosparql#hasGeometry> .
+<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Class> .
+<https://w3id.org/tern/ontologies/loc/latitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Ontology> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://topbraid.org/schema/> .
+_:ub1bL88C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/> <http://purl.org/dc/terms/publisher> <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> .
+_:ub1bL118C19 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tern/ontologies/loc/wktLiteral> .
+_:ub1bL58C19 <http://www.w3.org/2002/07/owl#qualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/isLocationOf> <http://www.w3.org/2000/01/rdf-schema#domain> <https://w3id.org/tern/ontologies/loc/Location> .
+_:ub1bL29C15 <http://schema.org/identifier> "https://orcid.org/0000-0002-6047-9864" .
+_:ub1bL106C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2000/01/rdf-schema#seeAlso> <https://github.com/ternaustralia/ontology_tern-loc> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> .
+<https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> <http://schema.org/name> "Terrestrial Ecosystem Research Network" .
+_:ub1bL100C19 <http://www.w3.org/2002/07/owl#onClass> <http://linked.data.gov.au/def/datatype/QuantitativeMeasure> .
+_:ub1bL94C19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/altitude> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> .
+_:ub1bL70C19 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.w3.org/2002/07/owl#Restriction> .
+<https://w3id.org/tern/ontologies/loc/> <http://www.w3.org/2002/07/owl#imports> <http://www.w3.org/ns/locn#> .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL106C19 .
+_:ub1bL112C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/longitude> .
+_:ub1bL88C19 <http://www.w3.org/2002/07/owl#maxQualifiedCardinality> "1"^^<http://www.w3.org/2001/XMLSchema#nonNegativeInteger> .
+<https://w3id.org/tern/ontologies/loc/location> <http://www.w3.org/2000/01/rdf-schema#range> <https://w3id.org/tern/ontologies/loc/Location> .
+_:ub1bL100C19 <http://www.w3.org/2002/07/owl#onProperty> <https://w3id.org/tern/ontologies/loc/elevation> .
+_:ub1bL29C15 <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://schema.org/Person> .
+<https://w3id.org/tern/ontologies/loc/LineString> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://www.opengis.net/ont/sf#LineString> .
+_:ub1bL58C19 <http://www.w3.org/2002/07/owl#onDataRange> <https://w3id.org/tern/ontologies/loc/wktLiteral> .
+<https://w3id.org/tern/ontologies/loc/Point> <http://www.w3.org/2000/01/rdf-schema#subClassOf> _:ub1bL94C19 .
 

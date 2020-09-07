@@ -153,7 +153,6 @@ tern-loc:depth
 tern-loc:elevation
   a rdf:Property ;
   rdfs:label "elevation" ;
-  rdfs:subPropertyOf schema:elevation ;
 .
 tern-loc:isLocationOf
   a owl:ObjectProperty ;

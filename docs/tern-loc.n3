@@ -97,8 +97,7 @@ tern-loc:depth a rdf:Property ;
     rdfs:label "depth" .
 
 tern-loc:elevation a rdf:Property ;
-    rdfs:label "elevation" ;
-    rdfs:subPropertyOf schema:elevation .
+    rdfs:label "elevation" .
 
 tern-loc:latitude a rdf:Property ;
     rdfs:label "latitude" ;

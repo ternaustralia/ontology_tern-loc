@@ -393,12 +393,12 @@
     An overview of the TERN Location Alignment Ontology.
    </p>
    <figure>
-    <img alt="TERN Location Alignment Ontology diagram." src="tern-loc.png">
+    <img alt="TERN Location Alignment diagram." src="overview.png">
     <figcaption style="padding-bottom: 3rem">
      <strong>
       Figure 1:
      </strong>
-     TERN Location Alignment Ontology diagram.
+     TERN Location Alignment diagram.
     </figcaption>
    </figure>
   </section>
@@ -505,15 +505,15 @@
        Super-classes
       </th>
       <td>
-       <a href="http://www.opengis.net/ont/geosparql#Feature">
-        geosparql:Feature
+       <a href="http://purl.org/dc/terms/Location">
+        dct:Location
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://purl.org/dc/terms/Location">
-        dct:Location
+       <a href="http://www.opengis.net/ont/geosparql#Feature">
+        geosparql:Feature
        </a>
        <sup class="sup-c" title="class">
         c
@@ -526,6 +526,17 @@
        Restrictions
       </th>
       <td>
+       <a href="https://w3id.org/tern/ontologies/loc/isLocationOf">
+        tern-loc:isLocationOf
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <span class="cardinality">
+        min
+       </span>
+       1
+       <br>
        <a href="http://www.opengis.net/ont/geosparql#hasGeometry">
         geosparql:hasGeometry
        </a>
@@ -539,17 +550,6 @@
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/loc/isLocationOf">
-        tern-loc:isLocationOf
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <span class="cardinality">
-        min
-       </span>
-       1
        <br>
       </td>
      </tr>
@@ -606,13 +606,6 @@
        Super-classes
       </th>
       <td>
-       <a href="http://www.opengis.net/ont/sf#Point">
-        sf:Point
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="http://www.w3.org/ns/locn#Geometry">
         http://www.w3.org/ns/locn#Geometry
        </a>
@@ -627,6 +620,13 @@
         c
        </sup>
        <br>
+       <a href="http://www.opengis.net/ont/sf#Point">
+        sf:Point
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
       </td>
      </tr>
      <tr>
@@ -634,34 +634,6 @@
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/loc/longitude">
-        tern-loc:longitude
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/loc/latitude">
-        tern-loc:latitude
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/loc/elevation">
         tern-loc:elevation
        </a>
@@ -690,11 +662,11 @@
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/altitude">
-        tern-loc:altitude
+       <a href="https://w3id.org/tern/ontologies/loc/latitude">
+        tern-loc:latitude
        </a>
        <span class="cardinality">
-        max
+        exactly
        </span>
        1
        <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
@@ -711,6 +683,34 @@
         exactly
        </span>
        1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/altitude">
+        tern-loc:altitude
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/longitude">
+        tern-loc:longitude
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
       </td>
      </tr>
@@ -1051,16 +1051,6 @@
        <code>
         https://w3id.org/tern/ontologies/loc/elevation
        </code>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       Super-properties
-      </th>
-      <td>
-       <a href="http://schema.org/elevation">
-        schema:elevation
-       </a>
       </td>
      </tr>
     </table>
