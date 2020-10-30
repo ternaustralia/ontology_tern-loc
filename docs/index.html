@@ -277,20 +277,20 @@
      </a>
     </dt>
     <dd>
-     2020-08-12
+     2020-10-30
     </dd>
     <dt>
      Version Information
     </dt>
     <dd>
-     0.0.7
+     0.0.8
     </dd>
     <dt>
      Version URI
     </dt>
     <dd>
-     <a href="https://w3id.org/tern/ontologies/loc/0.0.7">
-      tern-loc:0.0.7
+     <a href="https://w3id.org/tern/ontologies/loc/0.0.8">
+      tern-loc:0.0.8
      </a>
     </dd>
     <dt>
@@ -505,15 +505,15 @@
        Super-classes
       </th>
       <td>
-       <a href="http://purl.org/dc/terms/Location">
-        dct:Location
+       <a href="http://www.opengis.net/ont/geosparql#Feature">
+        geosparql:Feature
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://www.opengis.net/ont/geosparql#Feature">
-        geosparql:Feature
+       <a href="http://purl.org/dc/terms/Location">
+        dct:Location
        </a>
        <sup class="sup-c" title="class">
         c
@@ -634,34 +634,6 @@
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/loc/elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/loc/depth">
-        tern-loc:depth
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/loc/latitude">
         tern-loc:latitude
        </a>
@@ -684,8 +656,16 @@
        </span>
        1
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/altitude">
-        tern-loc:altitude
+       <a href="https://w3id.org/tern/ontologies/loc/depth">
+        tern-loc:depth
+       </a>
+       <span class="cardinality">
+        max
+       </span>
+       1 ()
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/elevation">
+        tern-loc:elevation
        </a>
        <span class="cardinality">
         max
@@ -703,6 +683,20 @@
        </a>
        <span class="cardinality">
         exactly
+       </span>
+       1
+       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
+        data:QuantitativeMeasure
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/altitude">
+        tern-loc:altitude
+       </a>
+       <span class="cardinality">
+        max
        </span>
        1
        <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">

@@ -34,7 +34,7 @@ tern-loc:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  dct:modified "2020-08-12"^^xsd:date ;
+  dct:modified "2020-10-30"^^xsd:date ;
   dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   vann:preferredNamespacePrefix "tern-loc" ;
   vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -49,8 +49,8 @@ tern-loc:
   owl:imports skos: ;
   owl:imports <http://www.w3.org/ns/locn#> ;
   owl:imports <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.7> ;
-  owl:versionInfo "0.0.7" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.8> ;
+  owl:versionInfo "0.0.8" ;
 .
 tern-loc:LineString
   a owl:Class ;
@@ -96,13 +96,19 @@ tern-loc:Point
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onClass data:QuantitativeMeasure ;
-      owl:onProperty tern-loc:depth ;
+      owl:onProperty tern-loc:elevation ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass data:QuantitativeMeasure ;
-      owl:onProperty tern-loc:elevation ;
+      owl:onClass [
+          a owl:Class ;
+          owl:unionOf (
+              data:QuantitativeMeasure
+              data:QuantitativeRange
+            ) ;
+        ] ;
+      owl:onProperty tern-loc:depth ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
