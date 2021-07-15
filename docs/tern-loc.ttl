@@ -1,12 +1,10 @@
 # baseURI: https://w3id.org/tern/ontologies/loc/
 # imports: http://purl.org/dc/terms/
-# imports: http://topbraid.org/schema/
 # imports: http://www.opengis.net/ont/geosparql
 # imports: http://www.opengis.net/ont/sf#
 # imports: http://www.w3.org/2003/01/geo/wgs84_pos
 # imports: http://www.w3.org/2004/02/skos/core#
 # imports: http://www.w3.org/ns/locn#
-# imports: https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
 # prefix: tern-loc
 
 @prefix : <https://w3id.org/tern/ontologies/loc/> .
@@ -34,7 +32,7 @@ tern-loc:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  dct:modified "2020-10-30"^^xsd:date ;
+  dct:modified "2021-07-15"^^xsd:date ;
   dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   vann:preferredNamespacePrefix "tern-loc" ;
   vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -42,32 +40,46 @@ tern-loc:
   rdfs:label "TERN Location Alignment Ontology" ;
   rdfs:seeAlso <https://github.com/ternaustralia/ontology_tern-loc> ;
   owl:imports dct: ;
-  owl:imports <http://topbraid.org/schema/> ;
   owl:imports <http://www.opengis.net/ont/geosparql> ;
   owl:imports sf: ;
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports skos: ;
   owl:imports <http://www.w3.org/ns/locn#> ;
-  owl:imports <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.8> ;
-  owl:versionInfo "0.0.8" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.9> ;
+  owl:versionInfo "0.0.9" ;
+.
+tern-loc:Geometry
+  a owl:Class ;
+  rdfs:label "Geometry" ;
+  rdfs:subClassOf geosparql:Geometry ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom geosparql:wktLiteral ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty dct:type ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geosparql:asWKT ;
+    ] ;
 .
 tern-loc:LineString
   a owl:Class ;
   rdfs:label "Line string" ;
   rdfs:subClassOf sf:LineString ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onDataRange tern-loc:wktLiteral ;
-      owl:onProperty geosparql:asWKT ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
+  rdfs:subClassOf tern-loc:Geometry ;
 .
 tern-loc:Location
   a owl:Class ;
   rdfs:label "Location" ;
   rdfs:subClassOf dct:Location ;
   rdfs:subClassOf geosparql:Feature ;
+  rdfs:subClassOf tern-loc:Geometry ;
   rdfs:subClassOf [
       a owl:Restriction ;
       owl:minCardinality "1"^^xsd:nonNegativeInteger ;
@@ -86,64 +98,63 @@ tern-loc:Point
   rdfs:subClassOf sf:Point ;
   rdfs:subClassOf geo:Point ;
   rdfs:subClassOf <http://www.w3.org/ns/locn#Geometry> ;
+  rdfs:subClassOf tern-loc:Geometry ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass data:QuantitativeMeasure ;
-      owl:onProperty tern-loc:altitude ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty geo:alt ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass data:QuantitativeMeasure ;
-      owl:onProperty tern-loc:elevation ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty geo:lat ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-      owl:onClass [
-          a owl:Class ;
-          owl:unionOf (
-              data:QuantitativeMeasure
-              data:QuantitativeRange
-            ) ;
-        ] ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty geo:long ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:allValuesFrom xsd:float ;
       owl:onProperty tern-loc:depth ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass data:QuantitativeMeasure ;
-      owl:onProperty tern-loc:latitude ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:allValuesFrom xsd:float ;
+      owl:onProperty tern-loc:elevation ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onClass data:QuantitativeMeasure ;
-      owl:onProperty tern-loc:longitude ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geo:lat ;
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:onDataRange tern-loc:wktLiteral ;
-      owl:onProperty geosparql:asWKT ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:cardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geo:long ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty geo:alt ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:depth ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:elevation ;
     ] ;
 .
 tern-loc:Polygon
   a owl:Class ;
   rdfs:label "Polygon" ;
   rdfs:subClassOf sf:Polygon ;
-  rdfs:subClassOf [
-      a owl:Restriction ;
-      owl:onDataRange tern-loc:wktLiteral ;
-      owl:onProperty geosparql:asWKT ;
-      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-    ] ;
-.
-tern-loc:altitude
-  a rdf:Property ;
-  rdfs:label "altitude" ;
-  rdfs:subPropertyOf geo:alt ;
+  rdfs:subClassOf tern-loc:Geometry ;
 .
 tern-loc:datum
   a rdf:Property ;
@@ -153,11 +164,12 @@ tern-loc:datum
   skos:example "<http://www.opengis.net/def/datum/EPSG/0/6326>" ;
 .
 tern-loc:depth
-  a rdf:Property ;
+  a owl:DatatypeProperty ;
   rdfs:label "depth" ;
+  skos:definition "Decimal metres below the surface of the land." ;
 .
 tern-loc:elevation
-  a rdf:Property ;
+  a owl:DatatypeProperty ;
   rdfs:label "elevation" ;
 .
 tern-loc:isLocationOf
@@ -167,11 +179,6 @@ tern-loc:isLocationOf
   rdfs:label "is location of" ;
   owl:inverseOf tern-loc:location ;
 .
-tern-loc:latitude
-  a rdf:Property ;
-  rdfs:label "latitude" ;
-  rdfs:subPropertyOf geo:lat ;
-.
 tern-loc:location
   a owl:ObjectProperty ;
   rdfs:comment "Relate a thing to a Location." ;
@@ -179,18 +186,6 @@ tern-loc:location
   rdfs:range tern-loc:Location ;
   rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
   owl:inverseOf tern-loc:isLocationOf ;
-.
-tern-loc:longitude
-  a rdf:Property ;
-  rdfs:label "longitude" ;
-  rdfs:subPropertyOf geo:long ;
-.
-tern-loc:wktLiteral
-  a rdfs:Datatype ;
-  rdfs:comment "A Well-known Text serialization of a geometry object." ;
-  rdfs:label "wkt literal" ;
-  rdfs:subClassOf geosparql:wktLiteral ;
-  skos:editorialNote "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360." ;
 .
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
   schema:alternateName "TERN" ;
