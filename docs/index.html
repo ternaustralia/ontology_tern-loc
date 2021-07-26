@@ -499,12 +499,28 @@
        <span class="cardinality">
         only
        </span>
+       (
        <a href="http://www.w3.org/2004/02/skos/core#Concept">
         skos:Concept
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
+       or
+       <a href="http://www.w3.org/2000/01/rdf-schema#Class">
+        rdfs:Class
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       or
+       <a href="http://www.w3.org/2002/07/owl#Class">
+        owl:Class
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       )
        <br>
       </td>
      </tr>
@@ -513,13 +529,6 @@
        Sub-classes
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/loc/Point">
-        tern-loc:Point
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
        <a href="https://w3id.org/tern/ontologies/loc/Polygon">
         tern-loc:Polygon
        </a>
@@ -527,8 +536,8 @@
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/LineString">
-        tern-loc:LineString
+       <a href="https://w3id.org/tern/ontologies/loc/Point">
+        tern-loc:Point
        </a>
        <sup class="sup-c" title="class">
         c
@@ -536,6 +545,13 @@
        <br>
        <a href="https://w3id.org/tern/ontologies/loc/Location">
         tern-loc:Location
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/LineString">
+        tern-loc:LineString
        </a>
        <sup class="sup-c" title="class">
         c
@@ -616,15 +632,15 @@
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/Geometry">
-        tern-loc:Geometry
+       <a href="http://purl.org/dc/terms/Location">
+        dct:Location
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://purl.org/dc/terms/Location">
-        dct:Location
+       <a href="https://w3id.org/tern/ontologies/loc/Geometry">
+        tern-loc:Geometry
        </a>
        <sup class="sup-c" title="class">
         c
@@ -724,8 +740,8 @@
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
-        geo:Point
+       <a href="http://www.opengis.net/ont/sf#Point">
+        sf:Point
        </a>
        <sup class="sup-c" title="class">
         c
@@ -738,8 +754,8 @@
         c
        </sup>
        <br>
-       <a href="http://www.opengis.net/ont/sf#Point">
-        sf:Point
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
+        geo:Point
        </a>
        <sup class="sup-c" title="class">
         c
@@ -752,78 +768,6 @@
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/loc/elevation">
-        tern-loc:elevation
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#float">
-        xsd:float
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
-        geo:long
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br>
-       <a href="https://w3id.org/tern/ontologies/loc/pointType">
-        tern-loc:pointType
-       </a>
-       <sup class="sup-op" title="object property">
-        op
-       </sup>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <br>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-        geo:lat
-       </a>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#float">
-        xsd:float
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="https://w3id.org/tern/ontologies/loc/depth">
-        tern-loc:depth
-       </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
-       <span class="cardinality">
-        only
-       </span>
-       <a href="http://www.w3.org/2001/XMLSchema#float">
-        xsd:float
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
-       <br>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-        geo:lat
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
-       <br>
        <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
         geo:alt
        </a>
@@ -837,19 +781,16 @@
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/depth">
-        tern-loc:depth
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        geo:alt
        </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
-       </sup>
        <span class="cardinality">
         max
        </span>
        1
        <br>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
-        geo:long
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        geo:lat
        </a>
        <span class="cardinality">
         only
@@ -861,11 +802,11 @@
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/elevation">
-        tern-loc:elevation
+       <a href="https://w3id.org/tern/ontologies/loc/pointType">
+        tern-loc:pointType
        </a>
-       <sup class="sup-dp" title="datatype property">
-        dp
+       <sup class="sup-op" title="object property">
+        op
        </sup>
        <span class="cardinality">
         max
@@ -888,13 +829,88 @@
         c
        </sup>
        <br>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
-        geo:alt
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        geo:lat
        </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        geo:long
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/depth">
+        tern-loc:depth
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
        <span class="cardinality">
         max
        </span>
        1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/elevation">
+        tern-loc:elevation
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/elevation">
+        tern-loc:elevation
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/depth">
+        tern-loc:depth
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        geo:long
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
       </td>
      </tr>

@@ -140,7 +140,8 @@ tern-loc:Geometry a owl:Class ;
             owl:allValuesFrom geosparql:wktLiteral ;
             owl:onProperty geosparql:asWKT ],
         [ a owl:Restriction ;
-            owl:allValuesFrom skos:Concept ;
+            owl:allValuesFrom [ a owl:Class ;
+                    owl:unionOf ( skos:Concept rdfs:Class owl:Class ) ] ;
             owl:onProperty dct:type ],
         [ a owl:Restriction ;
             owl:cardinality "1"^^xsd:nonNegativeInteger ;

@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.0.10] - 2021-07-26
 ### Added
 - tern-loc:pointType on tern-loc:Point
+- tern-loc:Point dcterms:type includes skos:Concept, rdfs:Class, or owl:Class
 
 
 ## [0.0.9] - 2021-07-15

@@ -59,7 +59,14 @@ tern-loc:Geometry
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
-      owl:allValuesFrom skos:Concept ;
+      owl:allValuesFrom [
+          a owl:Class ;
+          owl:unionOf (
+              skos:Concept
+              rdfs:Class
+              owl:Class
+            ) ;
+        ] ;
       owl:onProperty dct:type ;
     ] ;
   rdfs:subClassOf [
