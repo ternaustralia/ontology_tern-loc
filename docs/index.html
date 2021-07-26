@@ -277,20 +277,20 @@
      </a>
     </dt>
     <dd>
-     2020-10-30
+     2021-07-26
     </dd>
     <dt>
      Version Information
     </dt>
     <dd>
-     0.0.8
+     0.0.10
     </dd>
     <dt>
      Version URI
     </dt>
     <dd>
-     <a href="https://w3id.org/tern/ontologies/loc/0.0.8">
-      tern-loc:0.0.8
+     <a href="https://w3id.org/tern/ontologies/loc/0.0.10">
+      tern-loc:0.0.10
      </a>
     </dd>
     <dt>
@@ -299,10 +299,6 @@
     <dd>
      <a href="http://purl.org/dc/terms/">
       dct:
-     </a>
-     <br>
-     <a href="http://topbraid.org/schema/">
-      http://topbraid.org/schema/
      </a>
      <br>
      <a href="http://www.opengis.net/ont/geosparql">
@@ -323,10 +319,6 @@
      <br>
      <a href="http://www.w3.org/ns/locn#">
       http://www.w3.org/ns/locn#
-     </a>
-     <br>
-     <a href="https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf">
-      https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf
      </a>
      <br>
     </dd>
@@ -366,6 +358,11 @@
     <li>
      <a href="#objectproperties">
       Object Properties
+     </a>
+    </li>
+    <li>
+     <a href="#datatypeproperties">
+      Datatype Properties
      </a>
     </li>
     <li>
@@ -413,6 +410,11 @@
    </h2>
    <ul class="hlist">
     <li>
+     <a href="#Geometry">
+      Geometry
+     </a>
+    </li>
+    <li>
      <a href="#Linestring">
       Line string
      </a>
@@ -433,6 +435,116 @@
      </a>
     </li>
    </ul>
+   <div class="entity class" id="Geometry">
+    <h3>
+     Geometry
+     <sup class="sup-c" title="class">
+      c
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       URI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/Geometry
+       </code>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Super-classes
+      </th>
+      <td>
+       <a href="http://www.opengis.net/ont/geosparql#Geometry">
+        geosparql:Geometry
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Restrictions
+      </th>
+      <td>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.opengis.net/ont/geosparql#wktLiteral">
+        geosparql:wktLiteral
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.opengis.net/ont/geosparql#asWKT">
+        geosparql:asWKT
+       </a>
+       <span class="cardinality">
+        exactly
+       </span>
+       1
+       <br>
+       <a href="http://purl.org/dc/terms/type">
+        dct:type
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+      </td>
+     </tr>
+     <tr>
+      <th>
+       Sub-classes
+      </th>
+      <td>
+       <a href="https://w3id.org/tern/ontologies/loc/Point">
+        tern-loc:Point
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/Polygon">
+        tern-loc:Polygon
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/LineString">
+        tern-loc:LineString
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/Location">
+        tern-loc:Location
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+      </td>
+     </tr>
+    </table>
+   </div>
    <div class="entity class" id="Linestring">
     <h3>
      Line string
@@ -463,20 +575,12 @@
         c
        </sup>
        <br>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       Restrictions
-      </th>
-      <td>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
+       <a href="https://w3id.org/tern/ontologies/loc/Geometry">
+        tern-loc:Geometry
        </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
       </td>
      </tr>
@@ -507,6 +611,13 @@
       <td>
        <a href="http://www.opengis.net/ont/geosparql#Feature">
         geosparql:Feature
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/Geometry">
+        tern-loc:Geometry
        </a>
        <sup class="sup-c" title="class">
         c
@@ -620,6 +731,13 @@
         c
        </sup>
        <br>
+       <a href="https://w3id.org/tern/ontologies/loc/Geometry">
+        tern-loc:Geometry
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="http://www.opengis.net/ont/sf#Point">
         sf:Point
        </a>
@@ -634,77 +752,149 @@
        Restrictions
       </th>
       <td>
-       <a href="https://w3id.org/tern/ontologies/loc/latitude">
-        tern-loc:latitude
+       <a href="https://w3id.org/tern/ontologies/loc/elevation">
+        tern-loc:elevation
        </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
        <span class="cardinality">
-        exactly
+        only
        </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        geo:long
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/pointType">
+        tern-loc:pointType
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        geo:lat
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
        <br>
        <a href="https://w3id.org/tern/ontologies/loc/depth">
         tern-loc:depth
        </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
        <span class="cardinality">
-        max
+        only
        </span>
-       1 ()
-       <br>
-       <a href="https://w3id.org/tern/ontologies/loc/elevation">
-        tern-loc:elevation
-       </a>
-       <span class="cardinality">
-        max
-       </span>
-       1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/longitude">
-        tern-loc:longitude
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        geo:lat
        </a>
        <span class="cardinality">
         exactly
        </span>
        1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
+       <br>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        geo:alt
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
        <br>
-       <a href="https://w3id.org/tern/ontologies/loc/altitude">
-        tern-loc:altitude
+       <a href="https://w3id.org/tern/ontologies/loc/depth">
+        tern-loc:depth
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        geo:long
+       </a>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2001/XMLSchema#float">
+        xsd:float
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/elevation">
+        tern-loc:elevation
+       </a>
+       <sup class="sup-dp" title="datatype property">
+        dp
+       </sup>
+       <span class="cardinality">
+        max
+       </span>
+       1
+       <br>
+       <a href="https://w3id.org/tern/ontologies/loc/pointType">
+        tern-loc:pointType
+       </a>
+       <sup class="sup-op" title="object property">
+        op
+       </sup>
+       <span class="cardinality">
+        only
+       </span>
+       <a href="http://www.w3.org/2004/02/skos/core#Concept">
+        skos:Concept
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
+       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        geo:alt
        </a>
        <span class="cardinality">
         max
        </span>
        1
-       <a href="http://linked.data.gov.au/def/datatype/QuantitativeMeasure">
-        data:QuantitativeMeasure
-       </a>
-       <sup class="sup-c" title="class">
-        c
-       </sup>
        <br>
       </td>
      </tr>
@@ -733,27 +923,19 @@
        Super-classes
       </th>
       <td>
+       <a href="https://w3id.org/tern/ontologies/loc/Geometry">
+        tern-loc:Geometry
+       </a>
+       <sup class="sup-c" title="class">
+        c
+       </sup>
+       <br>
        <a href="http://www.opengis.net/ont/sf#Polygon">
         sf:Polygon
        </a>
        <sup class="sup-c" title="class">
         c
        </sup>
-       <br>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       Restrictions
-      </th>
-      <td>
-       <a href="http://www.opengis.net/ont/geosparql#asWKT">
-        geosparql:asWKT
-       </a>
-       <span class="cardinality">
-        exactly
-       </span>
-       1
        <br>
       </td>
      </tr>
@@ -778,6 +960,11 @@
     <li>
      <a href="#location">
       location
+     </a>
+    </li>
+    <li>
+     <a href="#pointtype">
+      point type
      </a>
     </li>
    </ul>
@@ -899,6 +1086,88 @@
      </tr>
     </table>
    </div>
+   <div class="entity property" id="pointtype">
+    <h3>
+     point type
+     <sup class="sup-op" title="object property">
+      op
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       URI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/pointType
+       </code>
+      </td>
+     </tr>
+    </table>
+   </div>
+  </section>
+  <section id="datatypeproperties">
+   <h2>
+    Datatype Properties
+    <span style="float:right; font-size:smaller;">
+     <a href="">
+      &amp;uparrow
+     </a>
+    </span>
+   </h2>
+   <ul class="hlist">
+    <li>
+     <a href="#depth">
+      depth
+     </a>
+    </li>
+    <li>
+     <a href="#elevation">
+      elevation
+     </a>
+    </li>
+   </ul>
+   <div class="entity property" id="depth">
+    <h3>
+     depth
+     <sup class="sup-dp" title="datatype property">
+      dp
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       URI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/depth
+       </code>
+      </td>
+     </tr>
+    </table>
+   </div>
+   <div class="entity property" id="elevation">
+    <h3>
+     elevation
+     <sup class="sup-dp" title="datatype property">
+      dp
+     </sup>
+    </h3>
+    <table>
+     <tr>
+      <th>
+       URI
+      </th>
+      <td>
+       <code>
+        https://w3id.org/tern/ontologies/loc/elevation
+       </code>
+      </td>
+     </tr>
+    </table>
+   </div>
   </section>
   <section id="properties">
    <h2>
@@ -911,66 +1180,11 @@
    </h2>
    <ul class="hlist">
     <li>
-     <a href="#altitude">
-      altitude
-     </a>
-    </li>
-    <li>
      <a href="#datum">
       datum
      </a>
     </li>
-    <li>
-     <a href="#depth">
-      depth
-     </a>
-    </li>
-    <li>
-     <a href="#elevation">
-      elevation
-     </a>
-    </li>
-    <li>
-     <a href="#latitude">
-      latitude
-     </a>
-    </li>
-    <li>
-     <a href="#longitude">
-      longitude
-     </a>
-    </li>
    </ul>
-   <div class="entity property" id="altitude">
-    <h3>
-     altitude
-     <sup class="sup-p" title="property">
-      p
-     </sup>
-    </h3>
-    <table>
-     <tr>
-      <th>
-       URI
-      </th>
-      <td>
-       <code>
-        https://w3id.org/tern/ontologies/loc/altitude
-       </code>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       Super-properties
-      </th>
-      <td>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
-        geo:alt
-       </a>
-      </td>
-     </tr>
-    </table>
-   </div>
    <div class="entity property" id="datum">
     <h3>
      datum
@@ -1005,106 +1219,6 @@
        <pre>
                       <http: 0="" 6326="" datum="" def="" epsg="" www.opengis.net="">
                     </http:></pre>
-      </td>
-     </tr>
-    </table>
-   </div>
-   <div class="entity property" id="depth">
-    <h3>
-     depth
-     <sup class="sup-p" title="property">
-      p
-     </sup>
-    </h3>
-    <table>
-     <tr>
-      <th>
-       URI
-      </th>
-      <td>
-       <code>
-        https://w3id.org/tern/ontologies/loc/depth
-       </code>
-      </td>
-     </tr>
-    </table>
-   </div>
-   <div class="entity property" id="elevation">
-    <h3>
-     elevation
-     <sup class="sup-p" title="property">
-      p
-     </sup>
-    </h3>
-    <table>
-     <tr>
-      <th>
-       URI
-      </th>
-      <td>
-       <code>
-        https://w3id.org/tern/ontologies/loc/elevation
-       </code>
-      </td>
-     </tr>
-    </table>
-   </div>
-   <div class="entity property" id="latitude">
-    <h3>
-     latitude
-     <sup class="sup-p" title="property">
-      p
-     </sup>
-    </h3>
-    <table>
-     <tr>
-      <th>
-       URI
-      </th>
-      <td>
-       <code>
-        https://w3id.org/tern/ontologies/loc/latitude
-       </code>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       Super-properties
-      </th>
-      <td>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
-        geo:lat
-       </a>
-      </td>
-     </tr>
-    </table>
-   </div>
-   <div class="entity property" id="longitude">
-    <h3>
-     longitude
-     <sup class="sup-p" title="property">
-      p
-     </sup>
-    </h3>
-    <table>
-     <tr>
-      <th>
-       URI
-      </th>
-      <td>
-       <code>
-        https://w3id.org/tern/ontologies/loc/longitude
-       </code>
-      </td>
-     </tr>
-     <tr>
-      <th>
-       Super-properties
-      </th>
-      <td>
-       <a href="http://www.w3.org/2003/01/geo/wgs84_pos#long">
-        geo:long
-       </a>
       </td>
      </tr>
     </table>

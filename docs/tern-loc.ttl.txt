@@ -1,21 +1,26 @@
 @startuml
 title TERN Location Alignment Ontology
-"geosparql:Feature" <|-- "tern-loc:Location"
 "dct:Location" <|-- "tern-loc:Location"
-"sf:LineString" <|-- "tern-loc:LineString"
+"tern-loc:Geometry" <|-- "tern-loc:Location"
+"geosparql:Feature" <|-- "tern-loc:Location"
 "sf:Polygon" <|-- "tern-loc:Polygon"
-"locn:Geometry" <|-- "tern-loc:Point"
-"geo:Point" <|-- "tern-loc:Point"
+"tern-loc:Geometry" <|-- "tern-loc:Polygon"
+"tern-loc:Geometry" <|-- "tern-loc:Point"
 "sf:Point" <|-- "tern-loc:Point"
+"geo:Point" <|-- "tern-loc:Point"
+"locn:Geometry" <|-- "tern-loc:Point"
+"sf:LineString" <|-- "tern-loc:LineString"
+"tern-loc:Geometry" <|-- "tern-loc:LineString"
+"geosparql:Geometry" <|-- "tern-loc:Geometry"
 Class "tern-loc:Location" [[https://w3id.org/tern/ontologies/loc/Location]] {
-}
-Class "tern-loc:LineString" [[https://w3id.org/tern/ontologies/loc/LineString]] {
 }
 Class "tern-loc:Polygon" [[https://w3id.org/tern/ontologies/loc/Polygon]] {
 }
 Class "tern-loc:Point" [[https://w3id.org/tern/ontologies/loc/Point]] {
 }
-Class "tern-loc:ub1bL103C19" [[ub1bL103C19]] {
+Class "tern-loc:LineString" [[https://w3id.org/tern/ontologies/loc/LineString]] {
+}
+Class "tern-loc:Geometry" [[https://w3id.org/tern/ontologies/loc/Geometry]] {
 }
 header
 Creator: Edmond Chuc (e.chuc@uq.edu.au) 

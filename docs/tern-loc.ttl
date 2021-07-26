@@ -32,7 +32,7 @@ tern-loc:
       schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
       schema:name "Edmond Chuc" ;
     ] ;
-  dct:modified "2021-07-15"^^xsd:date ;
+  dct:modified "2021-07-26"^^xsd:date ;
   dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
   vann:preferredNamespacePrefix "tern-loc" ;
   vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
@@ -45,8 +45,8 @@ tern-loc:
   owl:imports <http://www.w3.org/2003/01/geo/wgs84_pos> ;
   owl:imports skos: ;
   owl:imports <http://www.w3.org/ns/locn#> ;
-  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.9> ;
-  owl:versionInfo "0.0.9" ;
+  owl:versionIRI <https://w3id.org/tern/ontologies/loc/0.0.10> ;
+  owl:versionInfo "0.0.10" ;
 .
 tern-loc:Geometry
   a owl:Class ;
@@ -126,6 +126,11 @@ tern-loc:Point
     ] ;
   rdfs:subClassOf [
       a owl:Restriction ;
+      owl:allValuesFrom skos:Concept ;
+      owl:onProperty tern-loc:pointType ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
       owl:cardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty geo:lat ;
     ] ;
@@ -148,6 +153,11 @@ tern-loc:Point
       a owl:Restriction ;
       owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
       owl:onProperty tern-loc:elevation ;
+    ] ;
+  rdfs:subClassOf [
+      a owl:Restriction ;
+      owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+      owl:onProperty tern-loc:pointType ;
     ] ;
 .
 tern-loc:Polygon
@@ -186,6 +196,11 @@ tern-loc:location
   rdfs:range tern-loc:Location ;
   rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
   owl:inverseOf tern-loc:isLocationOf ;
+.
+tern-loc:pointType
+  a owl:ObjectProperty ;
+  rdfs:label "point type" ;
+  skos:definition "The type of point. E.g., centroid, south-west." ;
 .
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66>
   schema:alternateName "TERN" ;

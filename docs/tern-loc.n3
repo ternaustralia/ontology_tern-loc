@@ -1,4 +1,3 @@
-@prefix data: <http://linked.data.gov.au/def/datatype/> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix geo: <http://www.w3.org/2003/01/geo/wgs84_pos#> .
 @prefix geosparql: <http://www.opengis.net/ont/geosparql#> .
@@ -20,69 +19,73 @@ tern-loc: a owl:Ontology ;
             schema:email "e.chuc@uq.edu.au" ;
             schema:identifier "https://orcid.org/0000-0002-6047-9864" ;
             schema:name "Edmond Chuc" ] ;
-    dct:modified "2020-10-30"^^xsd:date ;
+    dct:modified "2021-07-26"^^xsd:date ;
     dct:publisher <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> ;
     vann:preferredNamespacePrefix "tern-loc" ;
     vann:preferredNamespaceUri "https://w3id.org/tern/ontologies/loc/" ;
     rdfs:comment "An alignment of a few widely used ontologies for describing locations, features and geometries." ;
     rdfs:seeAlso <https://github.com/ternaustralia/ontology_tern-loc> ;
     owl:imports dct:,
-        <http://topbraid.org/schema/>,
         <http://www.opengis.net/ont/geosparql>,
         sf:,
         <http://www.w3.org/2003/01/geo/wgs84_pos>,
         skos:,
-        <http://www.w3.org/ns/locn#>,
-        <https://raw.githubusercontent.com/AGLDWG/datatype-ont/master/rdf/datatype.rdf> ;
-    owl:versionIRI tern-loc:0.0.8 ;
-    owl:versionInfo "0.0.8" .
+        <http://www.w3.org/ns/locn#> ;
+    owl:versionIRI tern-loc:0.0.10 ;
+    owl:versionInfo "0.0.10" .
 
 tern-loc:LineString a owl:Class ;
     rdfs:label "Line string" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        sf:LineString .
+    rdfs:subClassOf sf:LineString,
+        tern-loc:Geometry .
 
 tern-loc:Point a owl:Class ;
     rdfs:label "Point" ;
     rdfs:subClassOf [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass [ a owl:Class ;
-                    owl:unionOf ( data:QuantitativeMeasure data:QuantitativeRange ) ] ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty geo:alt ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty geo:lat ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
+            owl:onProperty geo:long ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom xsd:float ;
             owl:onProperty tern-loc:depth ],
         [ a owl:Restriction ;
-            owl:onClass data:QuantitativeMeasure ;
-            owl:onProperty tern-loc:latitude ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onClass data:QuantitativeMeasure ;
-            owl:onProperty tern-loc:longitude ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:onDataRange tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass data:QuantitativeMeasure ;
-            owl:onProperty tern-loc:altitude ],
-        [ a owl:Restriction ;
-            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-            owl:onClass data:QuantitativeMeasure ;
+            owl:allValuesFrom xsd:float ;
             owl:onProperty tern-loc:elevation ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom skos:Concept ;
+            owl:onProperty tern-loc:pointType ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geo:lat ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geo:long ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geo:alt ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:depth ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:elevation ],
+        [ a owl:Restriction ;
+            owl:maxCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty tern-loc:pointType ],
         sf:Point,
         geo:Point,
-        <http://www.w3.org/ns/locn#Geometry> .
+        <http://www.w3.org/ns/locn#Geometry>,
+        tern-loc:Geometry .
 
 tern-loc:Polygon a owl:Class ;
     rdfs:label "Polygon" ;
-    rdfs:subClassOf [ a owl:Restriction ;
-            owl:onDataRange tern-loc:wktLiteral ;
-            owl:onProperty geosparql:asWKT ;
-            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
-        sf:Polygon .
+    rdfs:subClassOf sf:Polygon,
+        tern-loc:Geometry .
 
 tern-loc:datum a rdf:Property ;
     rdfs:label "datum" ;
@@ -90,30 +93,12 @@ tern-loc:datum a rdf:Property ;
     skos:editorialNote "This property may not be required. This vocabulary is based on https://www.w3.org/2003/01/geo/#vocabulary which assumes WGS84." ;
     skos:example "<http://www.opengis.net/def/datum/EPSG/0/6326>" .
 
-tern-loc:altitude a rdf:Property ;
-    rdfs:label "altitude" ;
-    rdfs:subPropertyOf geo:alt .
-
-tern-loc:depth a rdf:Property ;
-    rdfs:label "depth" .
-
-tern-loc:elevation a rdf:Property ;
-    rdfs:label "elevation" .
-
-tern-loc:latitude a rdf:Property ;
-    rdfs:label "latitude" ;
-    rdfs:subPropertyOf geo:lat .
-
 tern-loc:location a owl:ObjectProperty ;
     rdfs:label "location" ;
     rdfs:comment "Relate a thing to a Location." ;
     rdfs:range tern-loc:Location ;
     rdfs:subPropertyOf <http://www.w3.org/ns/locn#location> ;
     owl:inverseOf tern-loc:isLocationOf .
-
-tern-loc:longitude a rdf:Property ;
-    rdfs:label "longitude" ;
-    rdfs:subPropertyOf geo:long .
 
 tern-loc:Location a owl:Class ;
     rdfs:label "Location" ;
@@ -125,7 +110,15 @@ tern-loc:Location a owl:Class ;
             owl:onClass geosparql:Geometry ;
             owl:onProperty geosparql:hasGeometry ],
         dct:Location,
-        geosparql:Feature .
+        geosparql:Feature,
+        tern-loc:Geometry .
+
+tern-loc:depth a owl:DatatypeProperty ;
+    rdfs:label "depth" ;
+    skos:definition "Decimal metres below the surface of the land." .
+
+tern-loc:elevation a owl:DatatypeProperty ;
+    rdfs:label "elevation" .
 
 tern-loc:isLocationOf a owl:ObjectProperty ;
     rdfs:label "is location of" ;
@@ -133,13 +126,24 @@ tern-loc:isLocationOf a owl:ObjectProperty ;
     rdfs:domain tern-loc:Location ;
     owl:inverseOf tern-loc:location .
 
+tern-loc:pointType a owl:ObjectProperty ;
+    rdfs:label "point type" ;
+    skos:definition "The type of point. E.g., centroid, south-west." .
+
 <https://w3id.org/tern/resources/a083902d-d821-41be-b663-1d7cb33eea66> schema:alternateName "TERN" ;
     schema:name "Terrestrial Ecosystem Research Network" ;
     schema:url <https://www.tern.org.au/> .
 
-tern-loc:wktLiteral a rdfs:Datatype ;
-    rdfs:label "wkt literal" ;
-    rdfs:comment "A Well-known Text serialization of a geometry object." ;
-    rdfs:subClassOf geosparql:wktLiteral ;
-    skos:editorialNote "Created wktLiteral in the tern-loc namespace because there are issues with loading in geosparql:wktLiteral into Virtuoso version 07.20.3230 (latest at the time of creation). See https://github.com/openlink/virtuoso-opensource/issues/295 and https://github.com/openlink/virtuoso-opensource/issues/360." .
+tern-loc:Geometry a owl:Class ;
+    rdfs:label "Geometry" ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:allValuesFrom geosparql:wktLiteral ;
+            owl:onProperty geosparql:asWKT ],
+        [ a owl:Restriction ;
+            owl:allValuesFrom skos:Concept ;
+            owl:onProperty dct:type ],
+        [ a owl:Restriction ;
+            owl:cardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onProperty geosparql:asWKT ],
+        geosparql:Geometry .
 
