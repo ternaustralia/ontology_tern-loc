@@ -217,6 +217,13 @@ tern-loc:Point
       sh:datatype xsd:double ;
       sh:maxCount 1 ;
     ] ;
+  sh:property [
+      a sh:PropertyShape ;
+      sh:path tern-loc:pointType ;
+      sh:description "The type of point, e.g., south-west corner, centroid, etc." ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:IRI ;
+    ] ;
 .
 tern-loc:Polygon
   a owl:Class ;
