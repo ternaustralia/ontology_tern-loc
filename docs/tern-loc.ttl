@@ -192,6 +192,7 @@ tern-loc:Point
       a sh:PropertyShape ;
       sh:path geo:alt ;
       sh:datatype xsd:double ;
+      sh:description "The altitude of the object above the surface in metres." ;
       sh:maxCount 1 ;
       sh:name "alt" ;
     ] ;
@@ -199,6 +200,7 @@ tern-loc:Point
       a sh:PropertyShape ;
       sh:path geo:lat ;
       sh:datatype xsd:double ;
+      sh:description "The decimal latitude in WGS84." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "lat" ;
@@ -207,6 +209,7 @@ tern-loc:Point
       a sh:PropertyShape ;
       sh:path geo:long ;
       sh:datatype xsd:double ;
+      sh:description "The decimal longitude in WGS84." ;
       sh:maxCount 1 ;
       sh:minCount 1 ;
       sh:name "long" ;
@@ -215,12 +218,14 @@ tern-loc:Point
       a sh:PropertyShape ;
       sh:path tern-loc:depth ;
       sh:datatype xsd:double ;
+      sh:description "The depth of the object below the surface in metres." ;
       sh:maxCount 1 ;
     ] ;
   sh:property [
       a sh:PropertyShape ;
       sh:path tern-loc:elevation ;
       sh:datatype xsd:double ;
+      sh:description "The elevation of the object above sea level in metres." ;
       sh:maxCount 1 ;
       sh:nodeKind sh:Literal ;
     ] ;
