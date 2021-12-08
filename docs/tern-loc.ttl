@@ -219,6 +219,13 @@ tern-loc:Point
     ] ;
   sh:property [
       a sh:PropertyShape ;
+      sh:path tern-loc:elevation ;
+      sh:datatype xsd:double ;
+      sh:maxCount 1 ;
+      sh:nodeKind sh:Literal ;
+    ] ;
+  sh:property [
+      a sh:PropertyShape ;
       sh:path tern-loc:pointType ;
       sh:description "The type of point, e.g., south-west corner, centroid, etc." ;
       sh:maxCount 1 ;
