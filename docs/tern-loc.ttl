@@ -197,7 +197,7 @@ tern-loc:Point
       a sh:PropertyShape ;
       sh:path geo:alt ;
       sh:datatype xsd:double ;
-      sh:description "The altitude of the object above the surface in metres." ;
+      sh:description "The absolute altitude of the object above the surface in metres." ;
       sh:maxCount 1 ;
       sh:name "alt" ;
     ] ;
